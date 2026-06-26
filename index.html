@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WongBagus Prediction</title>
+<style>
+:root{--bg:#070b14;--card:#11172a;--card2:#161d35;--card3:#1c2542;--cyan:#22e8ff;--yellow:#fbbf24;--green:#1fe39a;--red:#ff5d6c;--muted:#5b6b8c;--text:#eaf1ff;--border:#243154;--purple:#b366ff;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;min-height:100vh;}
+.hdr{background:linear-gradient(135deg,#0d1b2a,#1a2f4a);padding:12px 14px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center}
+.hdr b{color:var(--yellow);font-size:16px}
+.wrap{max-width:1000px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px}
+.btn{background:var(--cyan);color:#031018;border:none;border-radius:8px;padding:10px 14px;font-weight:800;cursor:pointer;font-size:13px}
+.btn.red{background:var(--red)} .btn.green{background:var(--green)} .btn.gray{background:var(--card3);color:var(--text)} .btn.yellow{background:var(--yellow);color:#222}
+input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--card2);color:var(--text);margin-bottom:8px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.navcard{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;text-decoration:none;color:var(--text);display:block;position:relative}
+.navcard b{color:var(--cyan);display:block;margin-top:6px;font-size:13px}
+.hidden{display:none!important}
+.small{font-size:11px;color:var(--muted)}
+.flex{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+.mb-bar-login{background:var(--cyan);color:#031018;border:none;border-radius:6px;padding:7px 14px;font-weight:800;font-size:12px;cursor:pointer}
+.mb-name{font-weight:800;font-size:13px}
+.mb-plan{font-size:11px;color:var(--muted)}
+
+.wb-auth-overlay{position:fixed;inset:0;background:rgba(2,6,15,.9);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+.wb-auth-overlay.open{display:flex}
+.wb-auth-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;max-width:380px;width:100%}
+.wb-auth-tabs{display:flex;gap:6px;margin-bottom:14px}
+.wb-auth-tab{flex:1;background:var(--card3);border:none;border-radius:8px;padding:9px;color:var(--muted);font-weight:700;font-size:12px;cursor:pointer}
+.wb-auth-tab.active{background:var(--cyan);color:#031018}
+.wb-auth-input{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--card2);color:var(--text);margin-bottom:8px;font-size:13px}
+.wb-auth-btn{width:100%;background:var(--green);color:#04241a;border:none;border-radius:8px;padding:11px;font-weight:800;cursor:pointer;font-size:13px}
+.wb-auth-msg{font-size:12px;margin-top:8px;padding:8px;border-radius:8px;display:none}
+.wb-auth-msg.err{display:block;background:rgba(255,93,108,.12);color:var(--red)}
+.wb-auth-msg.ok{display:block;background:rgba(31,227,154,.12);color:var(--green)}
+.wb-auth-close{position:absolute;top:10px;right:14px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer}
+
+#wb-admin{position:fixed;inset:0;background:var(--bg);z-index:250;display:none;overflow-y:auto}
+.adm-head{display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:5}
+.adm-stats{display:flex;gap:8px;padding:12px 14px;flex-wrap:wrap}
+.adm-stat{flex:1;min-width:80px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center}
+.adm-num{font-size:20px;font-weight:800;color:var(--cyan)}
+.adm-num.blk{color:var(--red)}
+.adm-lbl{font-size:10px;color:var(--muted)}
+.adm-tabs{display:flex;gap:6px;padding:0 14px 10px;overflow-x:auto}
+.adm-tab{background:var(--card3);border:none;border-radius:8px;padding:8px 12px;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap}
+.adm-tab.on{background:var(--cyan);color:#031018}
+.adm-search{margin:0 14px 10px;width:calc(100% - 28px)}
+.adm-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin:0 14px 10px}
+.adm-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.adm-card-name{font-weight:800;font-size:13px}
+.bdg{font-size:10px;font-weight:800;padding:3px 9px;border-radius:20px}
+.bdg.active{background:rgba(31,227,154,.15);color:var(--green)}
+.bdg.blocked{background:rgba(255,93,108,.15);color:var(--red)}
+.bdg.pending{background:rgba(251,191,36,.15);color:var(--yellow)}
+.adm-card-row{display:flex;justify-content:space-between;font-size:11px;padding:3px 0;color:var(--muted)}
+.adm-card-val{color:var(--text)}
+.adm-card-acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.adm-card-acts button{flex:1;min-width:70px;padding:7px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer}
+.adm-empty,.adm-log-empty{text-align:center;color:var(--muted);padding:30px;font-size:12px}
+.adm-log-item{display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border)}
+.adm-log-name{font-size:12px;font-weight:700}
+.adm-log-email,.adm-log-time{font-size:11px;color:var(--muted)}
+
+.lockrow{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--border)}
+.swtch{position:relative;width:46px;height:26px;flex-shrink:0;cursor:pointer}
+.swtch input{opacity:0;width:0;height:0;position:absolute}
+.swtch .trk{position:absolute;inset:0;border-radius:26px;background:var(--card3);transition:.2s}
+.swtch .dot{position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.swtch input:checked + .trk{background:var(--red)}
+.swtch input:checked + .trk .dot{left:23px}
+
+.modalbg{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:280;padding:16px}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;max-width:420px;width:100%;max-height:85vh;overflow:auto}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <b>🎯 WONGBAGUS PREDICTION</b>
+  <div id="mb-guest" class="flex">
+    <button class="mb-bar-login" onclick="wbOpenAuth('login')">🔐 Login</button>
+  </div>
+  <div id="mb-logged" class="flex hidden">
+    <div>
+      <div class="mb-name" id="mb-name">-</div>
+      <div class="mb-plan" id="mb-plan">-</div>
+    </div>
+    <button id="mb-admin-btn" class="btn yellow hidden" style="padding:6px 10px;font-size:11px" onclick="wbOpenAdmin()">⚙️ Admin</button>
+    <button class="btn gray" style="padding:6px 10px;font-size:11px" onclick="wbLogout()">Logout</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <h3 style="color:var(--yellow);margin-bottom:10px">Menu Fitur</h3>
+    <p class="small" style="margin-bottom:10px">Login dulu untuk membuka fitur. Fitur yang dikunci admin akan tampak terkunci 🔒.</p>
+    <div class="grid" id="navGrid"></div>
+  </div>
+</div>
+
+<div class="wb-auth-overlay" id="wb-auth-overlay">
+  <div class="wb-auth-box" style="position:relative">
+    <button class="wb-auth-close" onclick="wbCloseAuth()">✕</button>
+    <h2 style="color:var(--yellow);text-align:center;margin-bottom:4px">WongBagus Prediction</h2>
+    <p class="small" style="text-align:center;margin-bottom:14px">Login untuk akses penuh</p>
+    <div class="wb-auth-tabs">
+      <button class="wb-auth-tab active" onclick="wbAuthTab('login',this)">🔑 Login</button>
+      <button class="wb-auth-tab" onclick="wbAuthTab('register',this)">📝 Daftar</button>
+      <button class="wb-auth-tab" onclick="wbAuthTab('admin',this)">⚙️ Admin</button>
+    </div>
+    <div id="wb-form-login">
+      <input type="text" id="l-email" class="wb-auth-input" placeholder="📱 Nomor HP">
+      <input type="password" id="l-pass" class="wb-auth-input" placeholder="🔑 Password">
+      <button class="wb-auth-btn" onclick="wbLogin()">🚀 Masuk Sekarang</button>
+    </div>
+    <div id="wb-form-register" style="display:none">
+      <input type="text" id="r-nama" class="wb-auth-input" placeholder="👤 Nama">
+      <input type="text" id="r-email" class="wb-auth-input" placeholder="📱 Nomor HP">
+      <input type="password" id="r-pass" class="wb-auth-input" placeholder="🔑 Buat password (min 4 karakter)">
+      <input type="password" id="r-pass2" class="wb-auth-input" placeholder="🔑 Ulangi password">
+      <button class="wb-auth-btn" onclick="wbRegister()">📝 Daftar Sekarang</button>
+    </div>
+    <div id="wb-form-admin" style="display:none">
+      <input type="text" id="a-user" class="wb-auth-input" placeholder="Username admin">
+      <input type="password" id="a-pass" class="wb-auth-input" placeholder="Password admin">
+      <button class="wb-auth-btn" onclick="wbAdminLogin()">⚙️ Masuk Admin Panel</button>
+    </div>
+    <div class="wb-auth-msg" id="wb-auth-msg"></div>
+  </div>
+</div>
+
+<div id="wb-admin">
+  <div class="adm-head">
+    <span style="color:var(--yellow);font-weight:800">⚙️ ADMIN PANEL</span>
+    <div class="flex">
+      <button class="btn gray" style="padding:6px 10px;font-size:11px" onclick="wbAdminLoad()">🔄 Refresh</button>
+      <button class="btn red" style="padding:6px 10px;font-size:11px" onclick="wbCloseAdmin()">✕ Tutup</button>
+    </div>
+  </div>
+  <div class="adm-stats">
+    <div class="adm-stat"><div class="adm-num" id="s-total">—</div><div class="adm-lbl">TOTAL</div></div>
+    <div class="adm-stat"><div class="adm-num" id="s-approved">—</div><div class="adm-lbl">AKTIF</div></div>
+    <div class="adm-stat"><div class="adm-num" id="s-pending">—</div><div class="adm-lbl">PENDING</div></div>
+    <div class="adm-stat"><div class="adm-num blk" id="s-blocked">—</div><div class="adm-lbl">BLOCKED</div></div>
+  </div>
+  <div class="adm-tabs">
+    <button class="adm-tab on" onclick="wbAdmTab('member',this)">👥 Member</button>
+    <button class="adm-tab" onclick="wbAdmTab('log',this)">📜 Log Login</button>
+    <button class="adm-tab" onclick="wbAdmTab('history',this)">📋 History</button>
+    <button class="adm-tab" onclick="wbAdmTab('passwords',this)">🔑 Passwords</button>
+    <button class="adm-tab" onclick="wbAdmTab('lockfitur',this)">🔒 Kunci Fitur Global</button>
+  </div>
+
+  <div id="adm-pane-member">
+    <input class="adm-search" id="adm-search" placeholder="🔍 Cari nama / no HP..." oninput="wbRenderTable()">
+    <div class="flex" style="padding:0 14px 10px">
+      <button class="adm-tab on" onclick="wbFilter('ALL',this)">Semua</button>
+      <button class="adm-tab" onclick="wbFilter('PENDING',this)">⏳ Pending</button>
+      <button class="adm-tab" onclick="wbFilter('APPROVED',this)">✅ Aktif</button>
+      <button class="adm-tab" onclick="wbFilter('BLOCKED',this)">🚫 Blocked</button>
+    </div>
+    <div id="adm-cards"></div>
+    <div class="adm-empty" id="adm-empty" style="display:none">Tidak ada member.</div>
+  </div>
+
+  <div id="adm-pane-log" style="display:none">
+    <div id="adm-log-list"><div class="adm-log-empty">⏳ Memuat...</div></div>
+  </div>
+
+  <div id="adm-pane-history" style="display:none">
+    <input class="adm-search" id="adm-hist-search" placeholder="🔍 Cari nama / ID..." oninput="wbRenderHistory()">
+    <div id="adm-hist-list"></div>
+  </div>
+
+  <div id="adm-pane-passwords" style="display:none">
+    <p class="small" style="padding:0 14px 8px">⚠️ <b>RAHASIA</b> — Password member tersimpan di JSONBin.</p>
+    <input class="adm-search" id="adm-pw-search" placeholder="🔍 Cari nama atau ID..." oninput="wbRenderPasswords()">
+    <div id="adm-pw-list"><div class="adm-log-empty">⏳ Memuat data password...</div></div>
+  </div>
+
+  <div id="adm-pane-lockfitur" style="display:none">
+    <p class="small" style="padding:0 14px 8px">Kunci global berlaku untuk SEMUA member. Untuk kunci per-member, buka tombol "Atur Kunci Fitur" di kartu member.</p>
+    <div class="flex" style="padding:0 14px 10px">
+      <button onclick="wbLockAll()" style="flex:1;padding:9px;border-radius:8px;border:1px solid rgba(239,68,68,.3);background:rgba(239,68,68,.1);color:#f87171;font-size:12px;font-weight:800;cursor:pointer;">🔒 Kunci Semua</button>
+      <button onclick="wbUnlockAll()" style="flex:1;padding:9px;border-radius:8px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.1);color:#10b981;font-size:12px;font-weight:800;cursor:pointer;">🔓 Buka Semua</button>
+    </div>
+    <div id="adm-lock-list"></div>
+  </div>
+</div>
+
+<div id="wb-mlock-overlay" style="display:none" onclick="if(event.target===this)wbCloseMemberLock()">
+  <div class="modalbg">
+    <div class="modal">
+      <div class="flex" style="justify-content:space-between;margin-bottom:6px">
+        <b id="wb-mlock-name" style="color:var(--yellow)"></b>
+        <button onclick="wbCloseMemberLock()" style="background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:50%;width:30px;height:30px;color:#aaa;cursor:pointer">✕</button>
+      </div>
+      <div class="flex" style="margin-bottom:8px">
+        <button onclick="wbMemberLockAll()" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(239,68,68,.3);background:rgba(239,68,68,.1);color:#f87171;font-size:11px;font-weight:800;cursor:pointer;">🔒 Kunci Semua</button>
+        <button onclick="wbMemberUnlockAll()" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.1);color:#10b981;font-size:11px;font-weight:800;cursor:pointer;">🔓 Buka Semua</button>
+      </div>
+      <div id="wb-mlock-list"></div>
+      <p class="small" style="margin-top:8px">⚡ Lock ini <b style="color:#f59e0b">khusus member ini</b> — lock global tetap berlaku terpisah.</p>
+      <button onclick="wbCloseMemberLock()" style="width:100%;margin-top:12px;padding:11px;border-radius:10px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.1);color:#f59e0b;font-size:13px;font-weight:800;cursor:pointer;">✅ Selesai & Simpan</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const BASE_URL = "https://kpps33040420090144-creator.github.io/WB-PREDICTION-/";
+
+const JKEY        = '$2a$10$LPCxsTJ/uyryjSkO9p6qnOVdwuU/vw28n6LZ1eXb5dyFQ9Heziqxe';
+const JBASE       = 'https://api.jsonbin.io/v3/b';
+const BIN_MEMBERS = '6a2652daf5f4af5e29c9476b';
+const BIN_LOGS    = '6a26535fda38895dfe97cbb8';
+const ADMIN_PW    = '240306';
+
+const WB_FEATURES = [
+  { key:'data',  label:'Data Result', file:'data.html'  },
+  { key:'scan1', label:'Scan 1',      file:'scan1.html' },
+  { key:'scan2', label:'Scan 2',      file:'scan2.html' },
+  { key:'scan3', label:'Scan 3',      file:'scan3.html' },
+  { key:'scan4', label:'Scan 4',      file:'scan4.html' },
+  { key:'scan5', label:'Scan 5',      file:'scan5.html' },
+];
+
+function escHtml(s){ return (s+'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+async function jGet(binId) {
+  const r = await fetch(`${JBASE}/${binId}/latest`, { headers: { 'X-Master-Key': JKEY } });
+  const d = await r.json();
+  if (!d || !d.record) return [];
+  return Array.isArray(d.record) ? d.record : (d.record.data || []);
+}
+async function jSet(binId, data) {
+  await fetch(`${JBASE}/${binId}`, {
+    method: 'PUT',
+    headers: { 'X-Master-Key': JKEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: data })
+  });
+}
+async function jGetMembers(){ try { return await jGet(BIN_MEMBERS); } catch(e){ return []; } }
+async function jSaveMembers(m){ await jSet(BIN_MEMBERS, m); }
+async function jAddLog(memberId, memberName, action, detail) {
+  try {
+    const logs = await jGet(BIN_LOGS);
+    logs.unshift({ id: Date.now(), memberId, memberName, action, detail, time: new Date().toLocaleString('id-ID') });
+    await jSet(BIN_LOGS, logs);
+  } catch(e) {}
+}
+function jGenId(members){ return 'MB' + String(members.length + 1).padStart(3, '0') + Date.now().toString().slice(-3); }
+
+let WB_ADMIN_CRED = null;
+let WB_ALL_USERS = [];
+let _wbCurrentFilter = 'ALL';
+let _wbLoginAttempts = 0;
+const WB_MAX_ATTEMPTS = 5;
+
+function wbAuthTab(tab, btn) {
+  ['login','register','admin'].forEach(t => {
+    const el = document.getElementById('wb-form-'+t);
+    if(el) el.style.display = t===tab ? '' : 'none';
+  });
+  document.querySelectorAll('.wb-auth-tab').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  wbAuthMsg('','');
+}
+function wbOpenAuth(tab){
+  document.getElementById('wb-auth-overlay').classList.add('open');
+  wbAuthTab(tab||'login');
+  const idx = {login:0,register:1,admin:2}[tab||'login'];
+  document.querySelectorAll('.wb-auth-tab').forEach((b,i)=>b.classList.toggle('active', i===idx));
+}
+function wbCloseAuth(){ document.getElementById('wb-auth-overlay').classList.remove('open'); }
+function wbAuthMsg(msg, type){
+  const el = document.getElementById('wb-auth-msg');
+  el.textContent = msg;
+  el.className = 'wb-auth-msg' + (type?' '+type:'');
+}
+
+async function wbLogin(){
+  const phone = document.getElementById('l-email').value.trim();
+  const pass  = document.getElementById('l-pass').value;
+  if(!phone||!pass){ wbAuthMsg('Nomor HP dan password wajib diisi.','err'); return; }
+  if(_wbLoginAttempts >= WB_MAX_ATTEMPTS){ wbAuthMsg('Terlalu banyak percobaan.','err'); return; }
+  wbAuthMsg('⏳ Memeriksa akun...','');
+  try{
+    const members = await jGetMembers();
+    const m = members.find(x=>x.phone===phone && x.password===pass);
+    if(!m){ _wbLoginAttempts++; wbAuthMsg('❌ Nomor HP atau password salah.','err'); return; }
+    if(m.status==='blocked'){ wbAuthMsg('❌ Akun kamu diblokir admin.','err'); return; }
+    const updated = members.map(x=>x.id===m.id?{...x,lastSeen:new Date().toLocaleString('id-ID')}:x);
+    jSaveMembers(updated);
+    jAddLog(m.id, m.name, 'Login', 'Login via app');
+    localStorage.setItem('wb_logged_member', JSON.stringify({...m, lastSeen:new Date().toLocaleString('id-ID')}));
+    wbAuthMsg('✅ Login berhasil!','ok');
+    setTimeout(()=>{ wbCloseAuth(); wbInitMemberBar(); renderNav(); }, 700);
+  }catch(e){ wbAuthMsg('❌ Koneksi gagal. Coba lagi.','err'); }
+}
+
+async function wbRegister(){
+  const nama=document.getElementById('r-nama').value.trim();
+  const phone=document.getElementById('r-email').value.trim();
+  const pass=document.getElementById('r-pass').value;
+  const pass2=document.getElementById('r-pass2').value;
+  if(!nama||!phone||!pass||!pass2){ wbAuthMsg('Semua field wajib diisi.','err'); return; }
+  if(pass.length<4){ wbAuthMsg('Password minimal 4 karakter.','err'); return; }
+  if(pass!==pass2){ wbAuthMsg('Password tidak cocok.','err'); return; }
+  wbAuthMsg('⏳ Mendaftarkan akun...','');
+  try{
+    const members = await jGetMembers();
+    if(members.find(m=>m.phone===phone)){ wbAuthMsg('❌ Nomor HP sudah terdaftar.','err'); return; }
+    const nm = { id:jGenId(members), name:nama, phone, password:pass, plan:'Basic',
+      joinDate:new Date().toISOString().slice(0,10), status:'pending',
+      lastSeen:new Date().toLocaleString('id-ID'), locked:[] };
+    members.push(nm);
+    await jSaveMembers(members);
+    await jAddLog(nm.id, nm.name, 'Registered', 'Daftar via app');
+    wbAuthMsg('✅ Pendaftaran berhasil! Tunggu admin mengaktifkan akunmu sebelum login.','ok');
+    setTimeout(()=>{ wbAuthTab('login'); }, 1500);
+  }catch(e){ wbAuthMsg('❌ Koneksi gagal. Coba lagi.','err'); }
+}
+
+function wbAdminLogin(){
+  const p = document.getElementById('a-pass').value;
+  if(!p){ wbAuthMsg('Password wajib diisi.','err'); return; }
+  if(p===ADMIN_PW){
+    WB_ADMIN_CRED = {u:'admin', p};
+    localStorage.setItem('wb_admin_cred', JSON.stringify({u:'admin', p}));
+    localStorage.setItem('wb_logged_member', JSON.stringify({id:'ADMIN', name:'Admin', plan:'Admin', isAdmin:true}));
+    wbAuthMsg('✅ Admin login berhasil!','ok');
+    setTimeout(()=>{ wbCloseAuth(); wbInitMemberBar(); renderNav(); wbOpenAdmin(); }, 500);
+  } else {
+    wbAuthMsg('❌ Password admin salah.','err');
+  }
+}
+
+function wbLogout(){
+  if(WB_ADMIN_CRED){ wbCloseAdmin(); WB_ADMIN_CRED=null; localStorage.removeItem('wb_admin_cred'); }
+  localStorage.removeItem('wb_logged_member');
+  location.reload();
+}
+
+function wbInitMemberBar(){
+  const raw = localStorage.getItem('wb_logged_member');
+  if(!raw){
+    document.getElementById('mb-guest').classList.remove('hidden');
+    document.getElementById('mb-logged').classList.add('hidden');
+    return;
+  }
+  try{
+    const obj = JSON.parse(raw);
+    document.getElementById('mb-guest').classList.add('hidden');
+    document.getElementById('mb-logged').classList.remove('hidden');
+    if(obj.isAdmin){
+      WB_ADMIN_CRED = JSON.parse(localStorage.getItem('wb_admin_cred')||'null');
+      document.getElementById('mb-name').textContent = '⚙️ Admin';
+      document.getElementById('mb-name').style.color = '#22d3ee';
+      document.getElementById('mb-plan').textContent = 'Full Access';
+      document.getElementById('mb-admin-btn').classList.remove('hidden');
+    } else {
+      document.getElementById('mb-name').textContent = 'Halo, ' + (obj.name||'Member');
+      document.getElementById('mb-plan').textContent = (obj.plan||'Basic') + ' · ' + (obj.phone||'');
+      document.getElementById('mb-admin-btn').classList.add('hidden');
+    }
+  }catch(e){}
+}
+
+function currentMember(){
+  try{ const raw=localStorage.getItem('wb_logged_member'); if(raw) return JSON.parse(raw); }catch(e){}
+  return null;
+}
+function renderNav(){
+  const m = currentMember();
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  WB_FEATURES.forEach(f=>{
+    const locked = m && !m.isAdmin && (m.locked||[]).includes(f.key);
+    const loggedIn = !!m;
+    const a = document.createElement(loggedIn && !locked ? 'a' : 'div');
+    a.className = 'navcard';
+    if(loggedIn && !locked) a.href = BASE_URL + f.file;
+    else a.style.opacity = .4;
+    a.innerHTML = `<div style="font-size:24px">${locked?'🔒':'📄'}</div><b>${f.label}</b>` +
+      (!loggedIn ? '<div class="small">Login dulu</div>' : (locked ? '<div class="small">Dikunci admin</div>' : ''));
+    if(!loggedIn) a.onclick = ()=>wbOpenAuth('login');
+    if(locked) a.onclick = (e)=>{ e.preventDefault(); wbShowLockedMsg(f.label); };
+    grid.appendChild(a);
+  });
+}
+function wbShowLockedMsg(label){ alert('🔒 Fitur "' + label + '" dikunci oleh Admin.'); }
+
+function wbOpenAdmin(){ document.getElementById('wb-admin').style.display='block'; wbAdminLoad(); }
+function wbCloseAdmin(){ document.getElementById('wb-admin').style.display='none'; }
+
+async function wbAdminLoad(){
+  if(!WB_ADMIN_CRED) return;
+  try{ WB_ALL_USERS = await jGetMembers(); wbRenderStats(); wbRenderTable(); }catch(e){}
+}
+
+async function wbSetStatus(id, status){
+  try{
+    const members = await jGetMembers();
+    const updated = members.map(m => (m.id===id||m.phone===id) ? {...m, status} : m);
+    const m = updated.find(x=>x.id===id||x.phone===id);
+    await jSaveMembers(updated);
+    if(m) await jAddLog(m.id, m.name, status==='blocked'?'Blocked':(status==='active'?'Activated/Unblocked':'StatusChange'), 'Diubah admin');
+    await wbAdminLoad();
+  }catch(e){}
+}
+async function wbDelUser(id, nama){
+  if(!confirm('Hapus user "'+nama+'"? Tidak bisa dibatalkan!')) return;
+  try{
+    const members = await jGetMembers();
+    const m = members.find(x=>x.id===id||x.phone===id);
+    await jSaveMembers(members.filter(x=>x.id!==id && x.phone!==id));
+    if(m) await jAddLog(m.id, m.name, 'Deleted', 'Dihapus admin');
+    await wbAdminLoad();
+  }catch(e){}
+}
+
+function wbAdmTab(tab, btn){
+  ['member','log','history','passwords','lockfitur'].forEach(t=>{
+    const el = document.getElementById('adm-pane-'+t);
+    if(el) el.style.display = t===tab ? '' : 'none';
+  });
+  document.querySelectorAll('.adm-tabs .adm-tab').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  if(tab==='log') wbLoadLog();
+  if(tab==='history') wbRenderHistory();
+  if(tab==='passwords') wbRenderPasswords();
+  if(tab==='lockfitur') wbRenderLockFitur();
+}
+
+function wbRenderStats(){
+  const u = WB_ALL_USERS;
+  document.getElementById('s-total').textContent = u.length;
+  document.getElementById('s-approved').textContent = u.filter(x=>x.status==='active').length;
+  document.getElementById('s-pending').textContent = u.filter(x=>x.status==='pending').length;
+  document.getElementById('s-blocked').textContent = u.filter(x=>x.status==='blocked').length;
+}
+
+function wbFilter(f, btn){
+  _wbCurrentFilter = f;
+  document.querySelectorAll('#adm-pane-member .adm-tab').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  wbRenderTable();
+}
+
+function wbRenderTable(){
+  const q = (document.getElementById('adm-search')?.value||'').toLowerCase();
+  let users = WB_ALL_USERS;
+  const filterMap = {'ALL':'ALL','PENDING':'pending','APPROVED':'active','BLOCKED':'blocked'};
+  const fv = filterMap[_wbCurrentFilter]||'ALL';
+  if(fv!=='ALL') users = users.filter(u=>u.status===fv);
+  if(q) users = users.filter(u=>(u.name+'').toLowerCase().includes(q)||(u.phone+'').toLowerCase().includes(q)||(u.id+'').toLowerCase().includes(q));
+  const container = document.getElementById('adm-cards');
+  const empty = document.getElementById('adm-empty');
+  if(!users.length){ container.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  const stLabel = {active:'✅ Aktif', blocked:'🚫 Blocked', pending:'⏳ Pending'};
+  container.innerHTML = users.map((u,i)=>{
+    const st = u.status || 'active';
+    const idSafe = (u.id||u.phone||'').replace(/'/g,"\\'");
+    const namaSafe = (u.name||'').replace(/'/g,"\\'");
+    const lockCount = (u.locked||[]).length;
+    const lockBadge = lockCount>0
+      ? `<span style="color:#f87171;font-size:10px;font-weight:800">🔒 ${lockCount} dikunci</span>`
+      : `<span style="color:#10b981;font-size:10px;font-weight:800">✅ Semua terbuka</span>`;
+    const btnApprove = st!=='active'  ? `<button onclick="wbSetStatus('${idSafe}','active')" style="background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:#10b981;">✅ Aktifkan</button>` : '';
+    const btnBlock   = st!=='blocked' ? `<button onclick="wbSetStatus('${idSafe}','blocked')" style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);color:#f87171;">🚫 Block</button>` : '';
+    const btnUnblock = st==='blocked' ? `<button onclick="wbSetStatus('${idSafe}','active')" style="background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);color:#fbbf24;">🔓 Unblock</button>` : '';
+    const btnDel = `<button onclick="wbDelUser('${idSafe}','${namaSafe}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);color:#f87171;">🗑️ Hapus</button>`;
+    return `<div class="adm-card">
+      <div class="adm-card-top">
+        <div class="adm-card-name">${i+1}. ${escHtml(u.name||'-')}</div>
+        <span class="bdg ${st}">${stLabel[st]||st}</span>
+      </div>
+      <div class="adm-card-row"><span>📱 No HP</span><span class="adm-card-val">${escHtml(u.phone||'-')}</span></div>
+      <div class="adm-card-row"><span>📅 Daftar</span><span class="adm-card-val">${escHtml(u.joinDate||'-')}</span></div>
+      <div class="adm-card-row"><span>🕐 Last Seen</span><span class="adm-card-val">${escHtml(u.lastSeen||'-')}</span></div>
+      <div class="adm-card-row"><span>🔒 Akses Fitur</span><span class="adm-card-val">${lockBadge}</span></div>
+      <button onclick="wbOpenMemberLock('${idSafe}','${namaSafe}')" style="width:100%;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:8px;font-size:12px;font-weight:800;color:#f59e0b;cursor:pointer;margin:8px 0">🔒 Atur Kunci Fitur Member</button>
+      <div class="adm-card-acts">${btnApprove}${btnBlock}${btnUnblock}${btnDel}</div>
+    </div>`;
+  }).join('');
+}
+
+async function wbLoadLog(){
+  const el = document.getElementById('adm-log-list');
+  try{
+    const logs = await jGet(BIN_LOGS);
+    if(!logs.length){ el.innerHTML='<div class="adm-log-empty">Belum ada aktivitas.</div>'; return; }
+    el.innerHTML = logs.slice(0,150).map(l=>`<div class="adm-log-item">
+      <div>🟢</div>
+      <div><div class="adm-log-name">${escHtml(l.memberName||'-')} <span style="color:var(--cyan)">[${escHtml(l.action||'-')}]</span></div>
+      <div class="adm-log-email">${escHtml(l.detail||'-')}</div>
+      <div class="adm-log-time">🕐 ${escHtml(l.time||'-')}</div></div>
+    </div>`).join('');
+  }catch(e){ el.innerHTML='<div class="adm-log-empty">Gagal memuat log.</div>'; }
+}
+
+async function wbRenderHistory(){
+  const q = (document.getElementById('adm-hist-search')?.value||'').toLowerCase();
+  const el = document.getElementById('adm-hist-list');
+  try{
+    const logs = await jGet(BIN_LOGS);
+    const filtered = q ? logs.filter(l=>(l.memberName+'').toLowerCase().includes(q)||(l.memberId+'').toLowerCase().includes(q)) : logs;
+    if(!filtered.length){ el.innerHTML='<div class="adm-log-empty">Tidak ada history.</div>'; return; }
+    el.innerHTML = filtered.slice(0,100).map(l=>`<div class="adm-log-item">
+      <div>🔵</div>
+      <div><div class="adm-log-name">${escHtml(l.memberName||'-')} <span style="color:var(--cyan)">[${escHtml(l.action||'-')}]</span></div>
+      <div class="adm-log-email">${escHtml(l.detail||'-')}</div>
+      <div class="adm-log-time">🕐 ${escHtml(l.time||'-')}</div></div>
+    </div>`).join('');
+  }catch(e){ el.innerHTML='<div class="adm-log-empty">Gagal memuat history.</div>'; }
+}
+
+function wbRenderPasswords(){
+  const q = (document.getElementById('adm-pw-search')?.value||'').toLowerCase();
+  const el = document.getElementById('adm-pw-list');
+  if(!WB_ALL_USERS.length){ el.innerHTML='<div class="adm-log-empty">Data belum dimuat. Refresh dulu.</div>'; return; }
+  let rows = WB_ALL_USERS;
+  if(q) rows = rows.filter(u=>(u.name+'').toLowerCase().includes(q)||(u.phone+'').toLowerCase().includes(q));
+  if(!rows.length){ el.innerHTML='<div class="adm-log-empty">Tidak ada member ditemukan.</div>'; return; }
+  el.innerHTML = rows.map((u,i)=>{
+    const pwId = 'pwlist_'+i;
+    return `<div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;margin:0 14px 8px">
+      <div class="flex" style="justify-content:space-between">
+        <div><b>${i+1}. ${escHtml(u.name||'-')}</b><div class="small">${escHtml(u.phone||'-')}</div></div>
+      </div>
+      <div class="flex" style="margin-top:6px">
+        <span id="${pwId}_mask" style="letter-spacing:2px;color:var(--muted)">••••••</span>
+        <span id="${pwId}_plain" style="display:none;font-weight:800;color:var(--yellow)">${escHtml(u.password||'-')}</span>
+        <button onclick="wbTogglePwView('${pwId}')" class="btn yellow" style="padding:3px 10px;font-size:10px">👁️ Lihat</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function wbTogglePwView(id){
+  const mask=document.getElementById(id+'_mask'), plain=document.getElementById(id+'_plain');
+  const showing = plain.style.display!=='none';
+  mask.style.display = showing?'':'none';
+  plain.style.display = showing?'none':'';
+}
+
+function wbGetLockedLocal(){ return new Set(JSON.parse(localStorage.getItem('wb_global_lock')||'[]')); }
+function wbSaveLockedLocal(set){ localStorage.setItem('wb_global_lock', JSON.stringify([...set])); }
+
+function wbRenderLockFitur(){
+  const locked = wbGetLockedLocal();
+  document.getElementById('adm-lock-list').innerHTML = WB_FEATURES.map(f=>{
+    const isLocked = locked.has(f.key);
+    return `<div class="lockrow">
+      <div><div style="font-weight:700;color:${isLocked?'#f87171':'#e6edf3'}">${isLocked?'🔒':'🔓'} ${f.label}</div>
+      <div class="small">${isLocked?'Dikunci — semua member tidak bisa akses':'Terbuka'}</div></div>
+      <label class="swtch"><input type="checkbox" data-key="${f.key}" ${isLocked?'checked':''} onchange="wbToggleLock(this)"><span class="trk"><span class="dot"></span></span></label>
+    </div>`;
+  }).join('');
+}
+function wbToggleLock(cb){
+  const locked = wbGetLockedLocal();
+  if(cb.checked) locked.add(cb.dataset.key); else locked.delete(cb.dataset.key);
+  wbSaveLockedLocal(locked);
+  wbRenderLockFitur();
+}
+function wbLockAll(){ wbSaveLockedLocal(new Set(WB_FEATURES.map(f=>f.key))); wbRenderLockFitur(); }
+function wbUnlockAll(){ wbSaveLockedLocal(new Set()); wbRenderLockFitur(); }
+
+let _wbMLockKey = '';
+let _wbMLockSet = new Set();
+function wbOpenMemberLock(idOrPhone, nama){
+  _wbMLockKey = idOrPhone;
+  const u = WB_ALL_USERS.find(x=>x.id===idOrPhone||x.phone===idOrPhone);
+  _wbMLockSet = new Set(u?.locked||[]);
+  document.getElementById('wb-mlock-name').textContent = nama + ' · ' + idOrPhone;
+  wbRenderMemberLockList();
+  document.getElementById('wb-mlock-overlay').style.display='block';
+}
+function wbCloseMemberLock(){
+  document.getElementById('wb-mlock-overlay').style.display='none';
+  wbRenderTable();
+}
+function wbRenderMemberLockList(){
+  const globalLocked = wbGetLockedLocal();
+  document.getElementById('wb-mlock-list').innerHTML = WB_FEATURES.map(f=>{
+    const byGlobal = globalLocked.has(f.key);
+    const byMember = _wbMLockSet.has(f.key);
+    const isLocked = byGlobal||byMember;
+    return `<div class="lockrow">
+      <div><div style="font-weight:700;font-size:12px;color:${isLocked?'#f87171':'#e6edf3'}">${isLocked?'🔒':'🔓'} ${f.label}</div>
+      <div class="small">${byGlobal?'🌐 Dikunci global':byMember?'👤 Dikunci member ini':'Terbuka'}</div></div>
+      <label class="swtch" style="cursor:${byGlobal?'not-allowed':'pointer'}"><input type="checkbox" data-key="${f.key}" ${isLocked?'checked':''} ${byGlobal?'disabled':''} onchange="wbToggleMemberLock(this)"><span class="trk" style="opacity:${byGlobal?'.5':'1'}"><span class="dot"></span></span></label>
+    </div>`;
+  }).join('');
+}
+async function wbToggleMemberLock(cb){
+  if(cb.checked) _wbMLockSet.add(cb.dataset.key); else _wbMLockSet.delete(cb.dataset.key);
+  await wbSaveMemberLockToServer();
+  wbRenderMemberLockList();
+}
+async function wbSaveMemberLockToServer(){
+  try{
+    const members = await jGetMembers();
+    const updated = members.map(m => (m.id===_wbMLockKey||m.phone===_wbMLockKey) ? {...m, locked:[..._wbMLockSet]} : m);
+    await jSaveMembers(updated);
+    WB_ALL_USERS = updated;
+  }catch(e){}
+}
+async function wbMemberLockAll(){ _wbMLockSet = new Set(WB_FEATURES.map(f=>f.key)); await wbSaveMemberLockToServer(); wbRenderMemberLockList(); }
+async function wbMemberUnlockAll(){ _wbMLockSet = new Set(); await wbSaveMemberLockToServer(); wbRenderMemberLockList(); }
+
+wbInitMemberBar();
+renderNav();
+(function(){
+  const raw = localStorage.getItem('wb_admin_cred');
+  if(raw) WB_ADMIN_CRED = JSON.parse(raw);
+})();
+</script>
+</body>
+</html>
