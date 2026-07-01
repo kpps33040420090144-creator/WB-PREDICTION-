@@ -1,0 +1,61 @@
+name: Auto Fetch Result Togel
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 urllib3
+
+      - name: Run fetch_all.py
+        run: python fetch_all.py
+        env:
+          TZ: Asia/Jakarta
+
+      - name: Run fetch_paito_teks.py (convert result.json → paito-data.json)
+        run: python fetch_paito_teks.py
+        env:
+          TZ: Asia/Jakarta
+
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add result.json paito-data.json
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan, skip commit."
+            exit 0
+          fi
+          WAKTU=$(TZ=Asia/Jakarta date +'%Y-%m-%d %H:%M WIB')
+          git commit -m "auto: update result.json + paito-data.json $WAKTU"
+          n=0
+          until [ $n -ge 5 ]; do
+            git push && echo "Push berhasil." && exit 0
+            n=$((n+1))
+            echo "Push gagal, retry $n/5 dalam 15 detik..."
+            sleep 15
+            git pull --rebase origin main 2>/dev/null || true
+          done
+          exit 0
