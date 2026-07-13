@@ -8,7 +8,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Hongkong Pools",
     "history": [
       {
@@ -622,7 +622,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Hongkong Lotto",
     "history": [
       {
@@ -1236,7 +1236,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Singapore",
     "history": [
       {
@@ -1842,7 +1842,7 @@
     ]
   },
   "sdy": {
-    "result": "4205",
+    "result": "5694",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -1850,9 +1850,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Sydney Pools",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5694"
+      },
       {
         "date": "2026-07-12",
         "result": "4205"
@@ -2448,15 +2452,11 @@
       {
         "date": "2026-02-14",
         "result": "7861"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "2705"
       }
     ]
   },
   "sdl": {
-    "result": "8512",
+    "result": "3302",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -2464,9 +2464,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Sydney Lotto",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "3302"
+      },
       {
         "date": "2026-07-12",
         "result": "8512"
@@ -3062,15 +3066,11 @@
       {
         "date": "2026-02-14",
         "result": "3255"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "8295"
       }
     ]
   },
   "kam": {
-    "result": "0925",
+    "result": "2665",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -3078,9 +3078,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Kamboja",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "2665"
+      },
       {
         "date": "2026-07-12",
         "result": "0925"
@@ -3676,15 +3680,11 @@
       {
         "date": "2026-02-14",
         "result": "0141"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "7456"
       }
     ]
   },
   "bull": {
-    "result": "4115",
+    "result": "7020",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -3692,9 +3692,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Bullseye NZ",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "7020"
+      },
       {
         "date": "2026-07-12",
         "result": "4115"
@@ -4290,15 +4294,11 @@
       {
         "date": "2026-02-14",
         "result": "1796"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "9571"
       }
     ]
   },
   "chn": {
-    "result": "8093",
+    "result": "4272",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -4306,9 +4306,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "China Pools",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "4272"
+      },
       {
         "date": "2026-07-12",
         "result": "8093"
@@ -4904,15 +4908,11 @@
       {
         "date": "2026-02-14",
         "result": "3329"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "0987"
       }
     ]
   },
   "jpn": {
-    "result": "1248",
+    "result": "5586",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -4920,9 +4920,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Japan",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5586"
+      },
       {
         "date": "2026-07-12",
         "result": "1248"
@@ -5518,10 +5522,6 @@
       {
         "date": "2026-02-14",
         "result": "8677"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "0718"
       }
     ]
   },
@@ -5534,7 +5534,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Taiwan",
     "history": [
       {
@@ -6148,7 +6148,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "PCSO",
     "history": [
       {
@@ -6754,7 +6754,7 @@
     ]
   },
   "mac1": {
-    "result": "0470",
+    "result": "7463",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -6762,9 +6762,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 13",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "7463"
+      },
       {
         "date": "2026-07-12",
         "result": "0470"
@@ -7360,15 +7364,11 @@
       {
         "date": "2026-02-14",
         "result": "1618"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "5070"
       }
     ]
   },
   "mac2": {
-    "result": "7095",
+    "result": "9354",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -7376,9 +7376,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 16",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "9354"
+      },
       {
         "date": "2026-07-12",
         "result": "7095"
@@ -7974,10 +7978,6 @@
       {
         "date": "2026-02-14",
         "result": "0146"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "3437"
       }
     ]
   },
@@ -7990,7 +7990,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 19",
     "history": [
       {
@@ -8604,7 +8604,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 22",
     "history": [
       {
@@ -9218,7 +9218,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 00",
     "history": [
       {
@@ -9832,7 +9832,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Toto Macau 23",
     "history": [
       {
@@ -10446,7 +10446,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Morocco 03:00",
     "history": [
       {
@@ -11060,7 +11060,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Morocco 18:00",
     "history": [
       {
@@ -11674,7 +11674,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Morocco 21:00",
     "history": [
       {
@@ -12288,7 +12288,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Morocco 23:59",
     "history": [
       {
@@ -12902,7 +12902,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Germany Plus5",
     "history": [
       {
@@ -13516,7 +13516,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Oregon 04:00",
     "history": [
       {
@@ -14122,7 +14122,7 @@
     ]
   },
   "or7": {
-    "result": "2278",
+    "result": "0768",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -14130,9 +14130,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Oregon 07:00",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "0768"
+      },
       {
         "date": "2026-07-11",
         "result": "2278"
@@ -14728,15 +14732,11 @@
       {
         "date": "2026-01-20",
         "result": "4366"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "3997"
       }
     ]
   },
   "or10": {
-    "result": "2632",
+    "result": "9173",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -14744,9 +14744,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Oregon 10:00",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "9173"
+      },
       {
         "date": "2026-07-12",
         "result": "2632"
@@ -15342,15 +15346,11 @@
       {
         "date": "2026-02-14",
         "result": "9185"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "5090"
       }
     ]
   },
   "or13": {
-    "result": "1414",
+    "result": "2511",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -15358,9 +15358,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Oregon 13:00",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "2511"
+      },
       {
         "date": "2026-07-12",
         "result": "1414"
@@ -15956,10 +15960,6 @@
       {
         "date": "2026-02-14",
         "result": "0109"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "5735"
       }
     ]
   },
@@ -15972,7 +15972,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "NC Day",
     "history": [
       {
@@ -16578,7 +16578,7 @@
     ]
   },
   "nce": {
-    "result": "6014",
+    "result": "5810",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -16586,9 +16586,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "NC Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5810"
+      },
       {
         "date": "2026-07-11",
         "result": "6014"
@@ -17184,10 +17188,6 @@
       {
         "date": "2026-01-20",
         "result": "3379"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "7225"
       }
     ]
   },
@@ -17200,7 +17200,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Georgia Midday",
     "history": [
       {
@@ -17806,7 +17806,7 @@
     ]
   },
   "geoe": {
-    "result": "7790",
+    "result": "0998",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -17814,613 +17814,613 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Georgia Evening",
     "history": [
       {
         "date": "2026-07-13",
-        "result": "7790"
+        "result": "0998"
       },
       {
         "date": "2026-07-12",
-        "result": "4310"
+        "result": "7790"
       },
       {
         "date": "2026-07-11",
-        "result": "8481"
+        "result": "4310"
       },
       {
         "date": "2026-07-10",
-        "result": "9607"
+        "result": "8481"
       },
       {
         "date": "2026-07-09",
-        "result": "0413"
+        "result": "9607"
       },
       {
         "date": "2026-07-08",
-        "result": "2539"
+        "result": "0413"
       },
       {
         "date": "2026-07-07",
-        "result": "5024"
+        "result": "2539"
       },
       {
         "date": "2026-07-06",
-        "result": "1757"
+        "result": "5024"
       },
       {
         "date": "2026-07-05",
-        "result": "1641"
+        "result": "1757"
       },
       {
         "date": "2026-07-04",
-        "result": "9679"
+        "result": "1641"
       },
       {
         "date": "2026-07-03",
-        "result": "0439"
+        "result": "9679"
       },
       {
         "date": "2026-07-02",
-        "result": "0689"
+        "result": "0439"
       },
       {
         "date": "2026-07-01",
-        "result": "2890"
+        "result": "0689"
       },
       {
         "date": "2026-06-30",
-        "result": "6763"
+        "result": "2890"
       },
       {
         "date": "2026-06-29",
-        "result": "7905"
+        "result": "6763"
       },
       {
         "date": "2026-06-28",
-        "result": "4919"
+        "result": "7905"
       },
       {
         "date": "2026-06-27",
-        "result": "9564"
+        "result": "4919"
       },
       {
         "date": "2026-06-26",
-        "result": "8459"
+        "result": "9564"
       },
       {
         "date": "2026-06-25",
-        "result": "2320"
+        "result": "8459"
       },
       {
         "date": "2026-06-24",
-        "result": "2471"
+        "result": "2320"
       },
       {
         "date": "2026-06-23",
-        "result": "2987"
+        "result": "2471"
       },
       {
         "date": "2026-06-22",
-        "result": "1815"
+        "result": "2987"
       },
       {
         "date": "2026-06-21",
-        "result": "3220"
+        "result": "1815"
       },
       {
         "date": "2026-06-20",
-        "result": "3899"
+        "result": "3220"
       },
       {
         "date": "2026-06-19",
-        "result": "1129"
+        "result": "3899"
       },
       {
         "date": "2026-06-18",
-        "result": "4823"
+        "result": "1129"
       },
       {
         "date": "2026-06-17",
-        "result": "8247"
+        "result": "4823"
       },
       {
         "date": "2026-06-16",
-        "result": "4746"
+        "result": "8247"
       },
       {
         "date": "2026-06-15",
-        "result": "0514"
+        "result": "4746"
       },
       {
         "date": "2026-06-14",
-        "result": "5701"
+        "result": "0514"
       },
       {
         "date": "2026-06-13",
-        "result": "4833"
+        "result": "5701"
       },
       {
         "date": "2026-06-12",
-        "result": "7295"
+        "result": "4833"
       },
       {
         "date": "2026-06-11",
-        "result": "0880"
+        "result": "7295"
       },
       {
         "date": "2026-06-10",
-        "result": "1853"
+        "result": "0880"
       },
       {
         "date": "2026-06-09",
-        "result": "3280"
-      },
-      {
-        "date": "2026-06-08",
-        "result": "8100"
-      },
-      {
-        "date": "2026-06-07",
-        "result": "0354"
-      },
-      {
-        "date": "2026-06-06",
-        "result": "8434"
-      },
-      {
-        "date": "2026-06-05",
-        "result": "0506"
-      },
-      {
-        "date": "2026-06-04",
-        "result": "7097"
-      },
-      {
-        "date": "2026-06-03",
         "result": "1853"
       },
       {
+        "date": "2026-06-08",
+        "result": "3280"
+      },
+      {
+        "date": "2026-06-07",
+        "result": "8100"
+      },
+      {
+        "date": "2026-06-06",
+        "result": "0354"
+      },
+      {
+        "date": "2026-06-05",
+        "result": "8434"
+      },
+      {
+        "date": "2026-06-04",
+        "result": "0506"
+      },
+      {
+        "date": "2026-06-03",
+        "result": "7097"
+      },
+      {
         "date": "2026-06-02",
-        "result": "3516"
+        "result": "1853"
       },
       {
         "date": "2026-06-01",
-        "result": "2589"
+        "result": "3516"
       },
       {
         "date": "2026-05-31",
-        "result": "8444"
+        "result": "2589"
       },
       {
         "date": "2026-05-30",
-        "result": "1065"
+        "result": "8444"
       },
       {
         "date": "2026-05-29",
-        "result": "0839"
+        "result": "1065"
       },
       {
         "date": "2026-05-28",
-        "result": "7112"
+        "result": "0839"
       },
       {
         "date": "2026-05-27",
-        "result": "2355"
+        "result": "7112"
       },
       {
         "date": "2026-05-26",
-        "result": "4969"
+        "result": "2355"
       },
       {
         "date": "2026-05-25",
-        "result": "1817"
+        "result": "4969"
       },
       {
         "date": "2026-05-24",
-        "result": "8485"
+        "result": "1817"
       },
       {
         "date": "2026-05-23",
-        "result": "0615"
+        "result": "8485"
       },
       {
         "date": "2026-05-22",
-        "result": "6135"
+        "result": "0615"
       },
       {
         "date": "2026-05-21",
-        "result": "7004"
+        "result": "6135"
       },
       {
         "date": "2026-05-20",
-        "result": "1566"
+        "result": "7004"
       },
       {
         "date": "2026-05-19",
-        "result": "5947"
+        "result": "1566"
       },
       {
         "date": "2026-05-18",
-        "result": "0278"
+        "result": "5947"
       },
       {
         "date": "2026-05-17",
-        "result": "5134"
+        "result": "0278"
       },
       {
         "date": "2026-05-16",
-        "result": "9467"
+        "result": "5134"
       },
       {
         "date": "2026-05-15",
-        "result": "5387"
+        "result": "9467"
       },
       {
         "date": "2026-05-14",
-        "result": "0511"
+        "result": "5387"
       },
       {
         "date": "2026-05-13",
-        "result": "3161"
+        "result": "0511"
       },
       {
         "date": "2026-05-12",
-        "result": "6525"
+        "result": "3161"
       },
       {
         "date": "2026-05-11",
-        "result": "9820"
+        "result": "6525"
       },
       {
         "date": "2026-05-10",
-        "result": "3810"
+        "result": "9820"
       },
       {
         "date": "2026-05-09",
-        "result": "5997"
+        "result": "3810"
       },
       {
         "date": "2026-05-08",
-        "result": "2954"
+        "result": "5997"
       },
       {
         "date": "2026-05-07",
-        "result": "1173"
+        "result": "2954"
       },
       {
         "date": "2026-05-06",
-        "result": "5028"
+        "result": "1173"
       },
       {
         "date": "2026-05-05",
-        "result": "3093"
+        "result": "5028"
       },
       {
         "date": "2026-05-04",
-        "result": "9111"
+        "result": "3093"
       },
       {
         "date": "2026-05-03",
-        "result": "2606"
+        "result": "9111"
       },
       {
         "date": "2026-05-02",
-        "result": "6096"
+        "result": "2606"
       },
       {
         "date": "2026-05-01",
-        "result": "5296"
+        "result": "6096"
       },
       {
         "date": "2026-04-30",
-        "result": "7913"
+        "result": "5296"
       },
       {
         "date": "2026-04-29",
-        "result": "0973"
+        "result": "7913"
       },
       {
         "date": "2026-04-28",
-        "result": "1652"
+        "result": "0973"
       },
       {
         "date": "2026-04-27",
-        "result": "8389"
+        "result": "1652"
       },
       {
         "date": "2026-04-26",
-        "result": "1529"
+        "result": "8389"
       },
       {
         "date": "2026-04-25",
-        "result": "5835"
+        "result": "1529"
       },
       {
         "date": "2026-04-24",
-        "result": "1454"
+        "result": "5835"
       },
       {
         "date": "2026-04-23",
-        "result": "2561"
+        "result": "1454"
       },
       {
         "date": "2026-04-22",
-        "result": "7849"
+        "result": "2561"
       },
       {
         "date": "2026-04-21",
-        "result": "9063"
+        "result": "7849"
       },
       {
         "date": "2026-04-20",
-        "result": "3831"
+        "result": "9063"
       },
       {
         "date": "2026-04-19",
-        "result": "9814"
+        "result": "3831"
       },
       {
         "date": "2026-04-18",
-        "result": "3978"
+        "result": "9814"
       },
       {
         "date": "2026-04-17",
-        "result": "0806"
+        "result": "3978"
       },
       {
         "date": "2026-04-16",
-        "result": "6516"
+        "result": "0806"
       },
       {
         "date": "2026-04-15",
-        "result": "4581"
+        "result": "6516"
       },
       {
         "date": "2026-04-14",
-        "result": "6413"
+        "result": "4581"
       },
       {
         "date": "2026-04-13",
-        "result": "8124"
+        "result": "6413"
       },
       {
         "date": "2026-04-12",
-        "result": "7275"
+        "result": "8124"
       },
       {
         "date": "2026-04-11",
-        "result": "8564"
+        "result": "7275"
       },
       {
         "date": "2026-04-10",
-        "result": "2070"
+        "result": "8564"
       },
       {
         "date": "2026-04-09",
-        "result": "6431"
+        "result": "2070"
       },
       {
         "date": "2026-04-08",
-        "result": "0322"
+        "result": "6431"
       },
       {
         "date": "2026-04-07",
-        "result": "4325"
+        "result": "0322"
       },
       {
         "date": "2026-04-06",
-        "result": "9767"
+        "result": "4325"
       },
       {
         "date": "2026-04-05",
-        "result": "3197"
+        "result": "9767"
       },
       {
         "date": "2026-04-04",
-        "result": "2865"
+        "result": "3197"
       },
       {
         "date": "2026-04-03",
-        "result": "1445"
+        "result": "2865"
       },
       {
         "date": "2026-04-02",
-        "result": "1480"
+        "result": "1445"
       },
       {
         "date": "2026-04-01",
-        "result": "4298"
+        "result": "1480"
       },
       {
         "date": "2026-03-31",
-        "result": "7979"
+        "result": "4298"
       },
       {
         "date": "2026-03-30",
-        "result": "1386"
+        "result": "7979"
       },
       {
         "date": "2026-03-29",
-        "result": "0811"
+        "result": "1386"
       },
       {
         "date": "2026-03-28",
-        "result": "9775"
+        "result": "0811"
       },
       {
         "date": "2026-03-27",
-        "result": "6670"
+        "result": "9775"
       },
       {
         "date": "2026-03-26",
-        "result": "0183"
+        "result": "6670"
       },
       {
         "date": "2026-03-25",
-        "result": "6404"
+        "result": "0183"
       },
       {
         "date": "2026-03-24",
-        "result": "4383"
-      },
-      {
-        "date": "2026-03-23",
-        "result": "8253"
-      },
-      {
-        "date": "2026-03-22",
-        "result": "7518"
-      },
-      {
-        "date": "2026-03-21",
-        "result": "7904"
-      },
-      {
-        "date": "2026-03-20",
-        "result": "1582"
-      },
-      {
-        "date": "2026-03-19",
-        "result": "8634"
-      },
-      {
-        "date": "2026-03-18",
-        "result": "9159"
-      },
-      {
-        "date": "2026-03-17",
-        "result": "7923"
-      },
-      {
-        "date": "2026-03-16",
-        "result": "5877"
-      },
-      {
-        "date": "2026-03-15",
-        "result": "4024"
-      },
-      {
-        "date": "2026-03-14",
-        "result": "7506"
-      },
-      {
-        "date": "2026-03-13",
-        "result": "1568"
-      },
-      {
-        "date": "2026-03-12",
-        "result": "6747"
-      },
-      {
-        "date": "2026-03-11",
-        "result": "0179"
-      },
-      {
-        "date": "2026-03-10",
-        "result": "7855"
-      },
-      {
-        "date": "2026-03-09",
-        "result": "6575"
-      },
-      {
-        "date": "2026-03-08",
-        "result": "9848"
-      },
-      {
-        "date": "2026-03-07",
-        "result": "8987"
-      },
-      {
-        "date": "2026-03-06",
         "result": "6404"
       },
       {
+        "date": "2026-03-23",
+        "result": "4383"
+      },
+      {
+        "date": "2026-03-22",
+        "result": "8253"
+      },
+      {
+        "date": "2026-03-21",
+        "result": "7518"
+      },
+      {
+        "date": "2026-03-20",
+        "result": "7904"
+      },
+      {
+        "date": "2026-03-19",
+        "result": "1582"
+      },
+      {
+        "date": "2026-03-18",
+        "result": "8634"
+      },
+      {
+        "date": "2026-03-17",
+        "result": "9159"
+      },
+      {
+        "date": "2026-03-16",
+        "result": "7923"
+      },
+      {
+        "date": "2026-03-15",
+        "result": "5877"
+      },
+      {
+        "date": "2026-03-14",
+        "result": "4024"
+      },
+      {
+        "date": "2026-03-13",
+        "result": "7506"
+      },
+      {
+        "date": "2026-03-12",
+        "result": "1568"
+      },
+      {
+        "date": "2026-03-11",
+        "result": "6747"
+      },
+      {
+        "date": "2026-03-10",
+        "result": "0179"
+      },
+      {
+        "date": "2026-03-09",
+        "result": "7855"
+      },
+      {
+        "date": "2026-03-08",
+        "result": "6575"
+      },
+      {
+        "date": "2026-03-07",
+        "result": "9848"
+      },
+      {
+        "date": "2026-03-06",
+        "result": "8987"
+      },
+      {
         "date": "2026-03-05",
-        "result": "0821"
+        "result": "6404"
       },
       {
         "date": "2026-03-04",
-        "result": "5493"
+        "result": "0821"
       },
       {
         "date": "2026-03-03",
-        "result": "2356"
+        "result": "5493"
       },
       {
         "date": "2026-03-02",
-        "result": "1816"
+        "result": "2356"
       },
       {
         "date": "2026-03-01",
-        "result": "1161"
+        "result": "1816"
       },
       {
         "date": "2026-02-28",
-        "result": "2650"
+        "result": "1161"
       },
       {
         "date": "2026-02-27",
-        "result": "0611"
+        "result": "2650"
       },
       {
         "date": "2026-02-26",
-        "result": "1666"
+        "result": "0611"
       },
       {
         "date": "2026-02-25",
-        "result": "3873"
+        "result": "1666"
       },
       {
         "date": "2026-02-24",
-        "result": "7857"
+        "result": "3873"
       },
       {
         "date": "2026-02-23",
-        "result": "1726"
+        "result": "7857"
       },
       {
         "date": "2026-02-22",
-        "result": "0960"
+        "result": "1726"
       },
       {
         "date": "2026-02-21",
-        "result": "3536"
+        "result": "0960"
       },
       {
         "date": "2026-02-20",
-        "result": "0004"
+        "result": "3536"
       },
       {
         "date": "2026-02-19",
-        "result": "2243"
+        "result": "0004"
       },
       {
         "date": "2026-02-18",
-        "result": "6111"
+        "result": "2243"
       },
       {
         "date": "2026-02-17",
-        "result": "3614"
+        "result": "6111"
       },
       {
         "date": "2026-02-16",
-        "result": "5394"
+        "result": "3614"
       },
       {
         "date": "2026-02-15",
-        "result": "9520"
+        "result": "5394"
       },
       {
         "date": "2026-02-14",
-        "result": "6527"
+        "result": "9520"
       }
     ]
   },
   "geon": {
-    "result": "3642",
+    "result": "1675",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -18428,9 +18428,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Georgia Night",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "1675"
+      },
       {
         "date": "2026-07-12",
         "result": "3642"
@@ -19026,10 +19030,6 @@
       {
         "date": "2026-02-14",
         "result": "3159"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "9596"
       }
     ]
   },
@@ -19042,7 +19042,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Texas Day",
     "history": [
       {
@@ -19656,7 +19656,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Texas Morning",
     "history": [
       {
@@ -20270,7 +20270,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Texas Evening",
     "history": [
       {
@@ -20884,7 +20884,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Texas Night",
     "history": [
       {
@@ -21498,7 +21498,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "New York Midday",
     "history": [
       {
@@ -22104,7 +22104,7 @@
     ]
   },
   "nye": {
-    "result": "4143",
+    "result": "2557",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -22112,9 +22112,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "New York Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "2557"
+      },
       {
         "date": "2026-07-12",
         "result": "4143"
@@ -22710,10 +22714,6 @@
       {
         "date": "2026-02-14",
         "result": "6175"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "7465"
       }
     ]
   },
@@ -22726,7 +22726,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "NJ Midday",
     "history": [
       {
@@ -23332,7 +23332,7 @@
     ]
   },
   "nje": {
-    "result": "2852",
+    "result": "9060",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -23340,7 +23340,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "NJ Evening",
     "history": [
       {
@@ -23349,599 +23349,599 @@
       },
       {
         "date": "2026-07-12",
-        "result": "9592"
+        "result": "9060"
       },
       {
         "date": "2026-07-11",
-        "result": "4523"
+        "result": "2852"
       },
       {
         "date": "2026-07-10",
-        "result": "2895"
+        "result": "9592"
       },
       {
         "date": "2026-07-09",
-        "result": "8045"
+        "result": "4523"
       },
       {
         "date": "2026-07-08",
-        "result": "5248"
+        "result": "2895"
       },
       {
         "date": "2026-07-07",
-        "result": "7046"
+        "result": "8045"
       },
       {
         "date": "2026-07-06",
-        "result": "2364"
+        "result": "5248"
       },
       {
         "date": "2026-07-05",
-        "result": "6221"
+        "result": "7046"
       },
       {
         "date": "2026-07-04",
-        "result": "6861"
+        "result": "2364"
       },
       {
         "date": "2026-07-03",
-        "result": "6356"
+        "result": "6221"
       },
       {
         "date": "2026-07-02",
-        "result": "6566"
+        "result": "6861"
       },
       {
         "date": "2026-07-01",
-        "result": "7948"
+        "result": "6356"
       },
       {
         "date": "2026-06-30",
-        "result": "0503"
+        "result": "6566"
       },
       {
         "date": "2026-06-29",
-        "result": "7628"
+        "result": "7948"
       },
       {
         "date": "2026-06-28",
-        "result": "7333"
+        "result": "0503"
       },
       {
         "date": "2026-06-27",
-        "result": "0299"
+        "result": "7628"
       },
       {
         "date": "2026-06-26",
-        "result": "1072"
+        "result": "7333"
       },
       {
         "date": "2026-06-25",
-        "result": "4201"
+        "result": "0299"
       },
       {
         "date": "2026-06-24",
-        "result": "0231"
+        "result": "1072"
       },
       {
         "date": "2026-06-23",
-        "result": "7963"
+        "result": "4201"
       },
       {
         "date": "2026-06-22",
-        "result": "8459"
+        "result": "0231"
       },
       {
         "date": "2026-06-21",
-        "result": "1925"
+        "result": "7963"
       },
       {
         "date": "2026-06-20",
-        "result": "5393"
+        "result": "8459"
       },
       {
         "date": "2026-06-19",
-        "result": "2990"
+        "result": "1925"
       },
       {
         "date": "2026-06-18",
-        "result": "6434"
+        "result": "5393"
       },
       {
         "date": "2026-06-17",
-        "result": "2746"
+        "result": "2990"
       },
       {
         "date": "2026-06-16",
-        "result": "5914"
+        "result": "6434"
       },
       {
         "date": "2026-06-15",
-        "result": "9635"
+        "result": "2746"
       },
       {
         "date": "2026-06-14",
-        "result": "7921"
+        "result": "5914"
       },
       {
         "date": "2026-06-13",
-        "result": "2935"
+        "result": "9635"
       },
       {
         "date": "2026-06-12",
-        "result": "3135"
+        "result": "7921"
       },
       {
         "date": "2026-06-11",
-        "result": "8331"
+        "result": "2935"
       },
       {
         "date": "2026-06-10",
-        "result": "3132"
+        "result": "3135"
       },
       {
         "date": "2026-06-09",
-        "result": "9794"
+        "result": "8331"
       },
       {
         "date": "2026-06-08",
-        "result": "5572"
+        "result": "3132"
       },
       {
         "date": "2026-06-07",
-        "result": "8101"
+        "result": "9794"
       },
       {
         "date": "2026-06-06",
-        "result": "3056"
+        "result": "5572"
       },
       {
         "date": "2026-06-05",
-        "result": "1555"
+        "result": "8101"
       },
       {
         "date": "2026-06-04",
-        "result": "9258"
+        "result": "3056"
       },
       {
         "date": "2026-06-03",
-        "result": "2757"
+        "result": "1555"
       },
       {
         "date": "2026-06-02",
-        "result": "7922"
+        "result": "9258"
       },
       {
         "date": "2026-06-01",
-        "result": "9502"
+        "result": "2757"
       },
       {
         "date": "2026-05-31",
-        "result": "0014"
+        "result": "7922"
       },
       {
         "date": "2026-05-30",
-        "result": "4670"
+        "result": "9502"
       },
       {
         "date": "2026-05-29",
-        "result": "0631"
+        "result": "0014"
       },
       {
         "date": "2026-05-28",
-        "result": "3600"
+        "result": "4670"
       },
       {
         "date": "2026-05-27",
-        "result": "5652"
+        "result": "0631"
       },
       {
         "date": "2026-05-26",
-        "result": "4536"
+        "result": "3600"
       },
       {
         "date": "2026-05-25",
-        "result": "2508"
+        "result": "5652"
       },
       {
         "date": "2026-05-24",
-        "result": "1879"
+        "result": "4536"
       },
       {
         "date": "2026-05-23",
-        "result": "9538"
+        "result": "2508"
       },
       {
         "date": "2026-05-22",
-        "result": "2960"
+        "result": "1879"
       },
       {
         "date": "2026-05-21",
-        "result": "8044"
+        "result": "9538"
       },
       {
         "date": "2026-05-20",
-        "result": "0748"
+        "result": "2960"
       },
       {
         "date": "2026-05-19",
-        "result": "7974"
+        "result": "8044"
       },
       {
         "date": "2026-05-18",
-        "result": "2396"
+        "result": "0748"
       },
       {
         "date": "2026-05-17",
-        "result": "3380"
+        "result": "7974"
       },
       {
         "date": "2026-05-16",
-        "result": "3077"
+        "result": "2396"
       },
       {
         "date": "2026-05-15",
-        "result": "1381"
+        "result": "3380"
       },
       {
         "date": "2026-05-14",
-        "result": "6584"
+        "result": "3077"
       },
       {
         "date": "2026-05-13",
-        "result": "0952"
+        "result": "1381"
       },
       {
         "date": "2026-05-12",
-        "result": "7464"
+        "result": "6584"
       },
       {
         "date": "2026-05-11",
-        "result": "7402"
+        "result": "0952"
       },
       {
         "date": "2026-05-10",
-        "result": "9308"
+        "result": "7464"
       },
       {
         "date": "2026-05-09",
-        "result": "8446"
+        "result": "7402"
       },
       {
         "date": "2026-05-08",
-        "result": "5195"
+        "result": "9308"
       },
       {
         "date": "2026-05-07",
-        "result": "8266"
+        "result": "8446"
       },
       {
         "date": "2026-05-06",
-        "result": "2104"
+        "result": "5195"
       },
       {
         "date": "2026-05-05",
-        "result": "4124"
+        "result": "8266"
       },
       {
         "date": "2026-05-04",
-        "result": "1224"
+        "result": "2104"
       },
       {
         "date": "2026-05-03",
-        "result": "7741"
+        "result": "4124"
       },
       {
         "date": "2026-05-02",
-        "result": "0771"
+        "result": "1224"
       },
       {
         "date": "2026-05-01",
-        "result": "3414"
+        "result": "7741"
       },
       {
         "date": "2026-04-30",
-        "result": "9509"
+        "result": "0771"
       },
       {
         "date": "2026-04-29",
-        "result": "4838"
+        "result": "3414"
       },
       {
         "date": "2026-04-28",
-        "result": "1905"
+        "result": "9509"
       },
       {
         "date": "2026-04-27",
-        "result": "0018"
+        "result": "4838"
       },
       {
         "date": "2026-04-26",
-        "result": "5118"
+        "result": "1905"
       },
       {
         "date": "2026-04-25",
-        "result": "1706"
+        "result": "0018"
       },
       {
         "date": "2026-04-24",
-        "result": "8146"
+        "result": "5118"
       },
       {
         "date": "2026-04-23",
-        "result": "8780"
+        "result": "1706"
       },
       {
         "date": "2026-04-22",
-        "result": "1554"
+        "result": "8146"
       },
       {
         "date": "2026-04-21",
-        "result": "5978"
+        "result": "8780"
       },
       {
         "date": "2026-04-20",
-        "result": "8209"
+        "result": "1554"
       },
       {
         "date": "2026-04-19",
-        "result": "1780"
+        "result": "5978"
       },
       {
         "date": "2026-04-18",
-        "result": "3916"
+        "result": "8209"
       },
       {
         "date": "2026-04-17",
-        "result": "0955"
+        "result": "1780"
       },
       {
         "date": "2026-04-16",
-        "result": "1878"
+        "result": "3916"
       },
       {
         "date": "2026-04-15",
-        "result": "2139"
+        "result": "0955"
       },
       {
         "date": "2026-04-14",
-        "result": "1982"
+        "result": "1878"
       },
       {
         "date": "2026-04-13",
-        "result": "5829"
+        "result": "2139"
       },
       {
         "date": "2026-04-12",
-        "result": "0341"
+        "result": "1982"
       },
       {
         "date": "2026-04-11",
-        "result": "8188"
+        "result": "5829"
       },
       {
         "date": "2026-04-10",
-        "result": "2247"
+        "result": "0341"
       },
       {
         "date": "2026-04-09",
-        "result": "0924"
+        "result": "8188"
       },
       {
         "date": "2026-04-08",
-        "result": "1577"
+        "result": "2247"
       },
       {
         "date": "2026-04-07",
-        "result": "9042"
+        "result": "0924"
       },
       {
         "date": "2026-04-06",
-        "result": "5537"
+        "result": "1577"
       },
       {
         "date": "2026-04-05",
-        "result": "8340"
+        "result": "9042"
       },
       {
         "date": "2026-04-04",
-        "result": "1861"
+        "result": "5537"
       },
       {
         "date": "2026-04-03",
-        "result": "1479"
+        "result": "8340"
       },
       {
         "date": "2026-04-02",
-        "result": "8817"
+        "result": "1861"
       },
       {
         "date": "2026-04-01",
-        "result": "3748"
+        "result": "1479"
       },
       {
         "date": "2026-03-31",
-        "result": "6327"
+        "result": "8817"
       },
       {
         "date": "2026-03-30",
-        "result": "8330"
+        "result": "3748"
       },
       {
         "date": "2026-03-29",
-        "result": "4187"
+        "result": "6327"
       },
       {
         "date": "2026-03-28",
-        "result": "5080"
+        "result": "8330"
       },
       {
         "date": "2026-03-27",
-        "result": "0973"
+        "result": "4187"
       },
       {
         "date": "2026-03-26",
-        "result": "5935"
+        "result": "5080"
       },
       {
         "date": "2026-03-25",
-        "result": "1169"
+        "result": "0973"
       },
       {
         "date": "2026-03-24",
-        "result": "8073"
+        "result": "5935"
       },
       {
         "date": "2026-03-23",
-        "result": "3304"
+        "result": "1169"
       },
       {
         "date": "2026-03-22",
-        "result": "2538"
+        "result": "8073"
       },
       {
         "date": "2026-03-21",
-        "result": "5894"
+        "result": "3304"
       },
       {
         "date": "2026-03-20",
-        "result": "7591"
+        "result": "2538"
       },
       {
         "date": "2026-03-19",
-        "result": "5869"
+        "result": "5894"
       },
       {
         "date": "2026-03-18",
-        "result": "6274"
+        "result": "7591"
       },
       {
         "date": "2026-03-17",
-        "result": "7701"
+        "result": "5869"
       },
       {
         "date": "2026-03-16",
-        "result": "3886"
+        "result": "6274"
       },
       {
         "date": "2026-03-15",
-        "result": "9461"
+        "result": "7701"
       },
       {
         "date": "2026-03-14",
-        "result": "8379"
+        "result": "3886"
       },
       {
         "date": "2026-03-13",
-        "result": "2611"
+        "result": "9461"
       },
       {
         "date": "2026-03-12",
-        "result": "9080"
+        "result": "8379"
       },
       {
         "date": "2026-03-11",
-        "result": "7542"
+        "result": "2611"
       },
       {
         "date": "2026-03-10",
-        "result": "6015"
+        "result": "9080"
       },
       {
         "date": "2026-03-09",
-        "result": "1270"
+        "result": "7542"
       },
       {
         "date": "2026-03-08",
-        "result": "2702"
+        "result": "6015"
       },
       {
         "date": "2026-03-07",
-        "result": "0282"
+        "result": "1270"
       },
       {
         "date": "2026-03-06",
-        "result": "5610"
+        "result": "2702"
       },
       {
         "date": "2026-03-05",
-        "result": "3336"
+        "result": "0282"
       },
       {
         "date": "2026-03-04",
-        "result": "8005"
+        "result": "5610"
       },
       {
         "date": "2026-03-03",
-        "result": "9041"
+        "result": "3336"
       },
       {
         "date": "2026-03-02",
-        "result": "7543"
+        "result": "8005"
       },
       {
         "date": "2026-03-01",
-        "result": "3571"
+        "result": "9041"
       },
       {
         "date": "2026-02-28",
-        "result": "3814"
+        "result": "7543"
       },
       {
         "date": "2026-02-27",
-        "result": "8148"
+        "result": "3571"
       },
       {
         "date": "2026-02-26",
-        "result": "0892"
+        "result": "3814"
       },
       {
         "date": "2026-02-25",
-        "result": "5938"
+        "result": "8148"
       },
       {
         "date": "2026-02-24",
-        "result": "2464"
+        "result": "0892"
       },
       {
         "date": "2026-02-23",
-        "result": "1050"
+        "result": "5938"
       },
       {
         "date": "2026-02-22",
-        "result": "6340"
+        "result": "2464"
       },
       {
         "date": "2026-02-21",
-        "result": "0941"
+        "result": "1050"
       },
       {
         "date": "2026-02-20",
-        "result": "2279"
+        "result": "6340"
       },
       {
         "date": "2026-02-19",
-        "result": "9234"
+        "result": "0941"
       },
       {
         "date": "2026-02-18",
-        "result": "7131"
+        "result": "2279"
       },
       {
         "date": "2026-02-17",
-        "result": "9072"
+        "result": "9234"
       },
       {
         "date": "2026-02-16",
-        "result": "9085"
+        "result": "7131"
       },
       {
         "date": "2026-02-15",
-        "result": "9073"
+        "result": "9072"
       },
       {
         "date": "2026-02-14",
-        "result": "7612"
+        "result": "9085"
       }
     ]
   },
@@ -23954,7 +23954,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Florida Midday",
     "history": [
       {
@@ -24560,7 +24560,7 @@
     ]
   },
   "fle": {
-    "result": "1514",
+    "result": "3818",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -24568,608 +24568,608 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Florida Evening",
     "history": [
       {
         "date": "2026-07-13",
-        "result": "1514"
+        "result": "3818"
       },
       {
         "date": "2026-07-11",
-        "result": "0441"
+        "result": "1514"
       },
       {
         "date": "2026-07-10",
-        "result": "9937"
+        "result": "0441"
       },
       {
         "date": "2026-07-09",
-        "result": "1322"
+        "result": "9937"
       },
       {
         "date": "2026-07-08",
-        "result": "0108"
+        "result": "1322"
       },
       {
         "date": "2026-07-07",
-        "result": "9066"
+        "result": "0108"
       },
       {
         "date": "2026-07-06",
-        "result": "4421"
+        "result": "9066"
       },
       {
         "date": "2026-07-04",
-        "result": "7878"
+        "result": "4421"
       },
       {
         "date": "2026-07-03",
-        "result": "7576"
+        "result": "7878"
       },
       {
         "date": "2026-07-02",
-        "result": "7224"
+        "result": "7576"
       },
       {
         "date": "2026-07-01",
-        "result": "9740"
+        "result": "7224"
       },
       {
         "date": "2026-06-30",
-        "result": "7574"
+        "result": "9740"
       },
       {
         "date": "2026-06-29",
-        "result": "2032"
+        "result": "7574"
       },
       {
         "date": "2026-06-27",
-        "result": "1463"
+        "result": "2032"
       },
       {
         "date": "2026-06-26",
-        "result": "4097"
+        "result": "1463"
       },
       {
         "date": "2026-06-25",
-        "result": "4274"
+        "result": "4097"
       },
       {
         "date": "2026-06-24",
-        "result": "3278"
+        "result": "4274"
       },
       {
         "date": "2026-06-23",
-        "result": "1840"
+        "result": "3278"
       },
       {
         "date": "2026-06-22",
-        "result": "0923"
+        "result": "1840"
       },
       {
         "date": "2026-06-20",
-        "result": "7357"
+        "result": "0923"
       },
       {
         "date": "2026-06-19",
-        "result": "6769"
+        "result": "7357"
       },
       {
         "date": "2026-06-18",
-        "result": "3540"
+        "result": "6769"
       },
       {
         "date": "2026-06-17",
-        "result": "3230"
+        "result": "3540"
       },
       {
         "date": "2026-06-16",
-        "result": "3624"
+        "result": "3230"
       },
       {
         "date": "2026-06-15",
-        "result": "7822"
+        "result": "3624"
       },
       {
         "date": "2026-06-13",
-        "result": "4229"
+        "result": "7822"
       },
       {
         "date": "2026-06-12",
-        "result": "6597"
+        "result": "4229"
       },
       {
         "date": "2026-06-11",
-        "result": "1250"
+        "result": "6597"
       },
       {
         "date": "2026-06-10",
-        "result": "5244"
+        "result": "1250"
       },
       {
         "date": "2026-06-09",
-        "result": "3405"
+        "result": "5244"
       },
       {
         "date": "2026-06-08",
-        "result": "3447"
+        "result": "3405"
       },
       {
         "date": "2026-06-06",
-        "result": "7404"
+        "result": "3447"
       },
       {
         "date": "2026-06-05",
-        "result": "4606"
+        "result": "7404"
       },
       {
         "date": "2026-06-04",
-        "result": "0415"
+        "result": "4606"
       },
       {
         "date": "2026-06-03",
-        "result": "8553"
+        "result": "0415"
       },
       {
         "date": "2026-06-02",
-        "result": "9542"
+        "result": "8553"
       },
       {
         "date": "2026-06-01",
-        "result": "4101"
+        "result": "9542"
       },
       {
         "date": "2026-05-30",
-        "result": "9865"
+        "result": "4101"
       },
       {
         "date": "2026-05-29",
-        "result": "4928"
+        "result": "9865"
       },
       {
         "date": "2026-05-28",
-        "result": "5338"
+        "result": "4928"
       },
       {
         "date": "2026-05-27",
-        "result": "2640"
+        "result": "5338"
       },
       {
         "date": "2026-05-26",
-        "result": "7046"
+        "result": "2640"
       },
       {
         "date": "2026-05-25",
-        "result": "0778"
+        "result": "7046"
       },
       {
         "date": "2026-05-23",
-        "result": "8727"
+        "result": "0778"
       },
       {
         "date": "2026-05-22",
-        "result": "6667"
+        "result": "8727"
       },
       {
         "date": "2026-05-21",
-        "result": "5101"
+        "result": "6667"
       },
       {
         "date": "2026-05-20",
-        "result": "2301"
+        "result": "5101"
       },
       {
         "date": "2026-05-19",
-        "result": "2110"
+        "result": "2301"
       },
       {
         "date": "2026-05-18",
-        "result": "3951"
+        "result": "2110"
       },
       {
         "date": "2026-05-16",
-        "result": "2415"
+        "result": "3951"
       },
       {
         "date": "2026-05-15",
-        "result": "7398"
+        "result": "2415"
       },
       {
         "date": "2026-05-14",
-        "result": "0349"
+        "result": "7398"
       },
       {
         "date": "2026-05-13",
-        "result": "0779"
+        "result": "0349"
       },
       {
         "date": "2026-05-12",
-        "result": "3284"
+        "result": "0779"
       },
       {
         "date": "2026-05-11",
-        "result": "0998"
+        "result": "3284"
       },
       {
         "date": "2026-05-09",
-        "result": "5066"
+        "result": "0998"
       },
       {
         "date": "2026-05-08",
-        "result": "8072"
+        "result": "5066"
       },
       {
         "date": "2026-05-07",
-        "result": "2844"
+        "result": "8072"
       },
       {
         "date": "2026-05-06",
-        "result": "1881"
+        "result": "2844"
       },
       {
         "date": "2026-05-05",
-        "result": "3478"
+        "result": "1881"
       },
       {
         "date": "2026-05-04",
-        "result": "1364"
+        "result": "3478"
       },
       {
         "date": "2026-05-02",
-        "result": "3146"
+        "result": "1364"
       },
       {
         "date": "2026-05-01",
-        "result": "5521"
+        "result": "3146"
       },
       {
         "date": "2026-04-30",
-        "result": "1986"
+        "result": "5521"
       },
       {
         "date": "2026-04-29",
-        "result": "4347"
+        "result": "1986"
       },
       {
         "date": "2026-04-28",
-        "result": "9336"
+        "result": "4347"
       },
       {
         "date": "2026-04-27",
-        "result": "5723"
-      },
-      {
-        "date": "2026-04-25",
-        "result": "4299"
-      },
-      {
-        "date": "2026-04-24",
-        "result": "8860"
-      },
-      {
-        "date": "2026-04-23",
-        "result": "4226"
-      },
-      {
-        "date": "2026-04-22",
-        "result": "1375"
-      },
-      {
-        "date": "2026-04-21",
-        "result": "4724"
-      },
-      {
-        "date": "2026-04-20",
-        "result": "9559"
-      },
-      {
-        "date": "2026-04-18",
-        "result": "5548"
-      },
-      {
-        "date": "2026-04-17",
-        "result": "1236"
-      },
-      {
-        "date": "2026-04-16",
-        "result": "3545"
-      },
-      {
-        "date": "2026-04-15",
-        "result": "0259"
-      },
-      {
-        "date": "2026-04-14",
-        "result": "6927"
-      },
-      {
-        "date": "2026-04-13",
-        "result": "4090"
-      },
-      {
-        "date": "2026-04-11",
-        "result": "2997"
-      },
-      {
-        "date": "2026-04-10",
-        "result": "2768"
-      },
-      {
-        "date": "2026-04-09",
-        "result": "3678"
-      },
-      {
-        "date": "2026-04-08",
-        "result": "7657"
-      },
-      {
-        "date": "2026-04-07",
-        "result": "0128"
-      },
-      {
-        "date": "2026-04-06",
-        "result": "5428"
-      },
-      {
-        "date": "2026-04-04",
-        "result": "9556"
-      },
-      {
-        "date": "2026-04-03",
-        "result": "6123"
-      },
-      {
-        "date": "2026-04-02",
-        "result": "7413"
-      },
-      {
-        "date": "2026-04-01",
-        "result": "1452"
-      },
-      {
-        "date": "2026-03-31",
-        "result": "3027"
-      },
-      {
-        "date": "2026-03-30",
-        "result": "4390"
-      },
-      {
-        "date": "2026-03-28",
-        "result": "8821"
-      },
-      {
-        "date": "2026-03-27",
-        "result": "6332"
-      },
-      {
-        "date": "2026-03-26",
-        "result": "6626"
-      },
-      {
-        "date": "2026-03-25",
-        "result": "4233"
-      },
-      {
-        "date": "2026-03-24",
-        "result": "7966"
-      },
-      {
-        "date": "2026-03-23",
-        "result": "4263"
-      },
-      {
-        "date": "2026-03-21",
-        "result": "7382"
-      },
-      {
-        "date": "2026-03-20",
-        "result": "7512"
-      },
-      {
-        "date": "2026-03-19",
-        "result": "0744"
-      },
-      {
-        "date": "2026-03-18",
-        "result": "5799"
-      },
-      {
-        "date": "2026-03-17",
-        "result": "4275"
-      },
-      {
-        "date": "2026-03-16",
-        "result": "2559"
-      },
-      {
-        "date": "2026-03-14",
-        "result": "2851"
-      },
-      {
-        "date": "2026-03-13",
-        "result": "5774"
-      },
-      {
-        "date": "2026-03-12",
-        "result": "6593"
-      },
-      {
-        "date": "2026-03-11",
-        "result": "6276"
-      },
-      {
-        "date": "2026-03-10",
-        "result": "0615"
-      },
-      {
-        "date": "2026-03-09",
-        "result": "8271"
-      },
-      {
-        "date": "2026-03-07",
-        "result": "5551"
-      },
-      {
-        "date": "2026-03-06",
-        "result": "8842"
-      },
-      {
-        "date": "2026-03-05",
-        "result": "2212"
-      },
-      {
-        "date": "2026-03-04",
-        "result": "2125"
-      },
-      {
-        "date": "2026-03-03",
-        "result": "0971"
-      },
-      {
-        "date": "2026-03-02",
-        "result": "6322"
-      },
-      {
-        "date": "2026-02-28",
-        "result": "1962"
-      },
-      {
-        "date": "2026-02-27",
-        "result": "3318"
-      },
-      {
-        "date": "2026-02-26",
-        "result": "5478"
-      },
-      {
-        "date": "2026-02-25",
-        "result": "6652"
-      },
-      {
-        "date": "2026-02-24",
-        "result": "4341"
-      },
-      {
-        "date": "2026-02-23",
-        "result": "0319"
-      },
-      {
-        "date": "2026-02-21",
-        "result": "9163"
-      },
-      {
-        "date": "2026-02-20",
-        "result": "2587"
-      },
-      {
-        "date": "2026-02-19",
-        "result": "5998"
-      },
-      {
-        "date": "2026-02-18",
-        "result": "7505"
-      },
-      {
-        "date": "2026-02-17",
-        "result": "2742"
-      },
-      {
-        "date": "2026-02-16",
-        "result": "0054"
-      },
-      {
-        "date": "2026-02-14",
-        "result": "1069"
-      },
-      {
-        "date": "2026-02-13",
-        "result": "7147"
-      },
-      {
-        "date": "2026-02-12",
-        "result": "5460"
-      },
-      {
-        "date": "2026-02-11",
-        "result": "1235"
-      },
-      {
-        "date": "2026-02-10",
-        "result": "6466"
-      },
-      {
-        "date": "2026-02-09",
         "result": "9336"
       },
       {
+        "date": "2026-04-25",
+        "result": "5723"
+      },
+      {
+        "date": "2026-04-24",
+        "result": "4299"
+      },
+      {
+        "date": "2026-04-23",
+        "result": "8860"
+      },
+      {
+        "date": "2026-04-22",
+        "result": "4226"
+      },
+      {
+        "date": "2026-04-21",
+        "result": "1375"
+      },
+      {
+        "date": "2026-04-20",
+        "result": "4724"
+      },
+      {
+        "date": "2026-04-18",
+        "result": "9559"
+      },
+      {
+        "date": "2026-04-17",
+        "result": "5548"
+      },
+      {
+        "date": "2026-04-16",
+        "result": "1236"
+      },
+      {
+        "date": "2026-04-15",
+        "result": "3545"
+      },
+      {
+        "date": "2026-04-14",
+        "result": "0259"
+      },
+      {
+        "date": "2026-04-13",
+        "result": "6927"
+      },
+      {
+        "date": "2026-04-11",
+        "result": "4090"
+      },
+      {
+        "date": "2026-04-10",
+        "result": "2997"
+      },
+      {
+        "date": "2026-04-09",
+        "result": "2768"
+      },
+      {
+        "date": "2026-04-08",
+        "result": "3678"
+      },
+      {
+        "date": "2026-04-07",
+        "result": "7657"
+      },
+      {
+        "date": "2026-04-06",
+        "result": "0128"
+      },
+      {
+        "date": "2026-04-04",
+        "result": "5428"
+      },
+      {
+        "date": "2026-04-03",
+        "result": "9556"
+      },
+      {
+        "date": "2026-04-02",
+        "result": "6123"
+      },
+      {
+        "date": "2026-04-01",
+        "result": "7413"
+      },
+      {
+        "date": "2026-03-31",
+        "result": "1452"
+      },
+      {
+        "date": "2026-03-30",
+        "result": "3027"
+      },
+      {
+        "date": "2026-03-28",
+        "result": "4390"
+      },
+      {
+        "date": "2026-03-27",
+        "result": "8821"
+      },
+      {
+        "date": "2026-03-26",
+        "result": "6332"
+      },
+      {
+        "date": "2026-03-25",
+        "result": "6626"
+      },
+      {
+        "date": "2026-03-24",
+        "result": "4233"
+      },
+      {
+        "date": "2026-03-23",
+        "result": "7966"
+      },
+      {
+        "date": "2026-03-21",
+        "result": "4263"
+      },
+      {
+        "date": "2026-03-20",
+        "result": "7382"
+      },
+      {
+        "date": "2026-03-19",
+        "result": "7512"
+      },
+      {
+        "date": "2026-03-18",
+        "result": "0744"
+      },
+      {
+        "date": "2026-03-17",
+        "result": "5799"
+      },
+      {
+        "date": "2026-03-16",
+        "result": "4275"
+      },
+      {
+        "date": "2026-03-14",
+        "result": "2559"
+      },
+      {
+        "date": "2026-03-13",
+        "result": "2851"
+      },
+      {
+        "date": "2026-03-12",
+        "result": "5774"
+      },
+      {
+        "date": "2026-03-11",
+        "result": "6593"
+      },
+      {
+        "date": "2026-03-10",
+        "result": "6276"
+      },
+      {
+        "date": "2026-03-09",
+        "result": "0615"
+      },
+      {
+        "date": "2026-03-07",
+        "result": "8271"
+      },
+      {
+        "date": "2026-03-06",
+        "result": "5551"
+      },
+      {
+        "date": "2026-03-05",
+        "result": "8842"
+      },
+      {
+        "date": "2026-03-04",
+        "result": "2212"
+      },
+      {
+        "date": "2026-03-03",
+        "result": "2125"
+      },
+      {
+        "date": "2026-03-02",
+        "result": "0971"
+      },
+      {
+        "date": "2026-02-28",
+        "result": "6322"
+      },
+      {
+        "date": "2026-02-27",
+        "result": "1962"
+      },
+      {
+        "date": "2026-02-26",
+        "result": "3318"
+      },
+      {
+        "date": "2026-02-25",
+        "result": "5478"
+      },
+      {
+        "date": "2026-02-24",
+        "result": "6652"
+      },
+      {
+        "date": "2026-02-23",
+        "result": "4341"
+      },
+      {
+        "date": "2026-02-21",
+        "result": "0319"
+      },
+      {
+        "date": "2026-02-20",
+        "result": "9163"
+      },
+      {
+        "date": "2026-02-19",
+        "result": "2587"
+      },
+      {
+        "date": "2026-02-18",
+        "result": "5998"
+      },
+      {
+        "date": "2026-02-17",
+        "result": "7505"
+      },
+      {
+        "date": "2026-02-16",
+        "result": "2742"
+      },
+      {
+        "date": "2026-02-14",
+        "result": "0054"
+      },
+      {
+        "date": "2026-02-13",
+        "result": "1069"
+      },
+      {
+        "date": "2026-02-12",
+        "result": "7147"
+      },
+      {
+        "date": "2026-02-11",
+        "result": "5460"
+      },
+      {
+        "date": "2026-02-10",
+        "result": "1235"
+      },
+      {
+        "date": "2026-02-09",
+        "result": "6466"
+      },
+      {
         "date": "2026-02-07",
-        "result": "0114"
+        "result": "9336"
       },
       {
         "date": "2026-02-06",
-        "result": "5415"
+        "result": "0114"
       },
       {
         "date": "2026-02-05",
-        "result": "4019"
+        "result": "5415"
       },
       {
         "date": "2026-02-04",
-        "result": "1722"
+        "result": "4019"
       },
       {
         "date": "2026-02-03",
-        "result": "5589"
+        "result": "1722"
       },
       {
         "date": "2026-02-02",
-        "result": "7883"
+        "result": "5589"
       },
       {
         "date": "2026-01-31",
-        "result": "1494"
+        "result": "7883"
       },
       {
         "date": "2026-01-30",
-        "result": "5075"
+        "result": "1494"
       },
       {
         "date": "2026-01-29",
-        "result": "5635"
+        "result": "5075"
       },
       {
         "date": "2026-01-28",
-        "result": "7058"
+        "result": "5635"
       },
       {
         "date": "2026-01-27",
-        "result": "5618"
+        "result": "7058"
       },
       {
         "date": "2026-01-26",
-        "result": "7294"
+        "result": "5618"
       },
       {
         "date": "2026-01-24",
-        "result": "0023"
+        "result": "7294"
       },
       {
         "date": "2026-01-23",
-        "result": "2766"
+        "result": "0023"
       },
       {
         "date": "2026-01-22",
-        "result": "2897"
+        "result": "2766"
       },
       {
         "date": "2026-01-21",
-        "result": "8312"
+        "result": "2897"
       },
       {
         "date": "2026-01-20",
-        "result": "7537"
+        "result": "8312"
       }
     ]
   },
@@ -25182,7 +25182,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Illinois Midday",
     "history": [
       {
@@ -25788,7 +25788,7 @@
     ]
   },
   "ile": {
-    "result": "0319",
+    "result": "9237",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -25796,9 +25796,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Illinois Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "9237"
+      },
       {
         "date": "2026-07-11",
         "result": "0319"
@@ -26394,10 +26398,6 @@
       {
         "date": "2026-01-20",
         "result": "4633"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "0808"
       }
     ]
   },
@@ -26410,7 +26410,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Indiana Midday",
     "history": [
       {
@@ -27016,7 +27016,7 @@
     ]
   },
   "inde": {
-    "result": "7518",
+    "result": "6687",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -27024,9 +27024,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Indiana Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "6687"
+      },
       {
         "date": "2026-07-11",
         "result": "7518"
@@ -27622,10 +27626,6 @@
       {
         "date": "2026-01-20",
         "result": "8100"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "3070"
       }
     ]
   },
@@ -27638,7 +27638,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Kentucky Midday",
     "history": [
       {
@@ -28244,7 +28244,7 @@
     ]
   },
   "kye": {
-    "result": "3697",
+    "result": "1121",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -28252,9 +28252,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Kentucky Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "1121"
+      },
       {
         "date": "2026-07-11",
         "result": "3697"
@@ -28850,10 +28854,6 @@
       {
         "date": "2026-01-20",
         "result": "0902"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "4539"
       }
     ]
   },
@@ -28866,7 +28866,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Maryland Midday",
     "history": [
       {
@@ -29472,7 +29472,7 @@
     ]
   },
   "mde": {
-    "result": "0992",
+    "result": "1207",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -29480,9 +29480,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Maryland Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "1207"
+      },
       {
         "date": "2026-07-11",
         "result": "0992"
@@ -30078,10 +30082,6 @@
       {
         "date": "2026-01-20",
         "result": "2433"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "7656"
       }
     ]
   },
@@ -30094,7 +30094,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Michigan Midday",
     "history": [
       {
@@ -30700,7 +30700,7 @@
     ]
   },
   "mie": {
-    "result": "4559",
+    "result": "0188",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -30708,268 +30708,268 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Michigan Evening",
     "history": [
       {
         "date": "2026-07-13",
-        "result": "4559"
+        "result": "0188"
       },
       {
         "date": "2026-07-11",
-        "result": "2661"
+        "result": "4559"
       },
       {
         "date": "2026-07-10",
-        "result": "2188"
+        "result": "2661"
       },
       {
         "date": "2026-07-09",
-        "result": "6917"
+        "result": "2188"
       },
       {
         "date": "2026-07-08",
-        "result": "3562"
+        "result": "6917"
       },
       {
         "date": "2026-07-07",
-        "result": "1697"
+        "result": "3562"
       },
       {
         "date": "2026-07-06",
-        "result": "5426"
+        "result": "1697"
       },
       {
         "date": "2026-07-04",
-        "result": "3206"
+        "result": "5426"
       },
       {
         "date": "2026-07-03",
-        "result": "3185"
+        "result": "3206"
       },
       {
         "date": "2026-07-02",
-        "result": "1440"
+        "result": "3185"
       },
       {
         "date": "2026-07-01",
-        "result": "2028"
+        "result": "1440"
       },
       {
         "date": "2026-06-30",
-        "result": "2283"
+        "result": "2028"
       },
       {
         "date": "2026-06-29",
-        "result": "0776"
+        "result": "2283"
       },
       {
         "date": "2026-06-27",
-        "result": "2166"
+        "result": "0776"
       },
       {
         "date": "2026-06-26",
-        "result": "4730"
+        "result": "2166"
       },
       {
         "date": "2026-06-25",
-        "result": "3230"
+        "result": "4730"
       },
       {
         "date": "2026-06-24",
-        "result": "7913"
+        "result": "3230"
       },
       {
         "date": "2026-06-23",
-        "result": "1912"
+        "result": "7913"
       },
       {
         "date": "2026-06-22",
-        "result": "7402"
+        "result": "1912"
       },
       {
         "date": "2026-06-20",
-        "result": "0689"
+        "result": "7402"
       },
       {
         "date": "2026-06-19",
-        "result": "5062"
+        "result": "0689"
       },
       {
         "date": "2026-06-18",
-        "result": "5075"
+        "result": "5062"
       },
       {
         "date": "2026-06-17",
-        "result": "7072"
+        "result": "5075"
       },
       {
         "date": "2026-06-16",
-        "result": "9283"
+        "result": "7072"
       },
       {
         "date": "2026-06-15",
-        "result": "8963"
+        "result": "9283"
       },
       {
         "date": "2026-06-13",
-        "result": "8906"
+        "result": "8963"
       },
       {
         "date": "2026-06-12",
-        "result": "3624"
+        "result": "8906"
       },
       {
         "date": "2026-06-11",
-        "result": "1882"
+        "result": "3624"
       },
       {
         "date": "2026-06-10",
-        "result": "3231"
+        "result": "1882"
       },
       {
         "date": "2026-06-09",
-        "result": "4663"
+        "result": "3231"
       },
       {
         "date": "2026-06-08",
-        "result": "2426"
+        "result": "4663"
       },
       {
         "date": "2026-06-06",
-        "result": "2074"
+        "result": "2426"
       },
       {
         "date": "2026-06-05",
-        "result": "4161"
+        "result": "2074"
       },
       {
         "date": "2026-06-04",
-        "result": "5585"
+        "result": "4161"
       },
       {
         "date": "2026-06-03",
-        "result": "8722"
+        "result": "5585"
       },
       {
         "date": "2026-06-02",
-        "result": "6220"
+        "result": "8722"
       },
       {
         "date": "2026-06-01",
-        "result": "2281"
+        "result": "6220"
       },
       {
         "date": "2026-05-30",
-        "result": "4263"
+        "result": "2281"
       },
       {
         "date": "2026-05-29",
-        "result": "6771"
+        "result": "4263"
       },
       {
         "date": "2026-05-28",
-        "result": "6270"
+        "result": "6771"
       },
       {
         "date": "2026-05-27",
-        "result": "9826"
+        "result": "6270"
       },
       {
         "date": "2026-05-26",
-        "result": "3335"
+        "result": "9826"
       },
       {
         "date": "2026-05-25",
-        "result": "5287"
+        "result": "3335"
       },
       {
         "date": "2026-05-23",
-        "result": "3120"
+        "result": "5287"
       },
       {
         "date": "2026-05-22",
-        "result": "1254"
+        "result": "3120"
       },
       {
         "date": "2026-05-21",
-        "result": "5029"
+        "result": "1254"
       },
       {
         "date": "2026-05-20",
-        "result": "2953"
+        "result": "5029"
       },
       {
         "date": "2026-05-19",
-        "result": "9475"
+        "result": "2953"
       },
       {
         "date": "2026-05-18",
-        "result": "5851"
+        "result": "9475"
       },
       {
         "date": "2026-05-16",
-        "result": "0370"
+        "result": "5851"
       },
       {
         "date": "2026-05-15",
-        "result": "0346"
+        "result": "0370"
       },
       {
         "date": "2026-05-14",
-        "result": "5139"
+        "result": "0346"
       },
       {
         "date": "2026-05-13",
-        "result": "9160"
+        "result": "5139"
       },
       {
         "date": "2026-05-12",
-        "result": "7875"
+        "result": "9160"
       },
       {
         "date": "2026-05-11",
-        "result": "8189"
+        "result": "7875"
       },
       {
         "date": "2026-05-09",
-        "result": "6193"
+        "result": "8189"
       },
       {
         "date": "2026-05-08",
-        "result": "8161"
+        "result": "6193"
       },
       {
         "date": "2026-05-07",
-        "result": "7896"
+        "result": "8161"
       },
       {
         "date": "2026-05-06",
-        "result": "5477"
+        "result": "7896"
       },
       {
         "date": "2026-05-05",
-        "result": "8871"
+        "result": "5477"
       },
       {
         "date": "2026-05-04",
-        "result": "3018"
+        "result": "8871"
       },
       {
         "date": "2026-05-02",
-        "result": "2966"
+        "result": "3018"
       },
       {
         "date": "2026-05-01",
-        "result": "7511"
+        "result": "2966"
       },
       {
         "date": "2026-04-30",
-        "result": "9730"
+        "result": "7511"
       },
       {
         "date": "2026-04-29",
-        "result": "2633"
+        "result": "9730"
       },
       {
         "date": "2026-04-28",
@@ -30977,339 +30977,339 @@
       },
       {
         "date": "2026-04-27",
-        "result": "7208"
+        "result": "2633"
       },
       {
         "date": "2026-04-25",
-        "result": "1417"
+        "result": "7208"
       },
       {
         "date": "2026-04-24",
-        "result": "2141"
+        "result": "1417"
       },
       {
         "date": "2026-04-23",
-        "result": "8081"
+        "result": "2141"
       },
       {
         "date": "2026-04-22",
-        "result": "6020"
-      },
-      {
-        "date": "2026-04-21",
-        "result": "5350"
-      },
-      {
-        "date": "2026-04-20",
-        "result": "3005"
-      },
-      {
-        "date": "2026-04-18",
-        "result": "6156"
-      },
-      {
-        "date": "2026-04-17",
-        "result": "4739"
-      },
-      {
-        "date": "2026-04-16",
-        "result": "1028"
-      },
-      {
-        "date": "2026-04-15",
-        "result": "8352"
-      },
-      {
-        "date": "2026-04-14",
-        "result": "2275"
-      },
-      {
-        "date": "2026-04-13",
-        "result": "4089"
-      },
-      {
-        "date": "2026-04-11",
-        "result": "0144"
-      },
-      {
-        "date": "2026-04-10",
-        "result": "4321"
-      },
-      {
-        "date": "2026-04-09",
-        "result": "7023"
-      },
-      {
-        "date": "2026-04-08",
-        "result": "2534"
-      },
-      {
-        "date": "2026-04-07",
-        "result": "2458"
-      },
-      {
-        "date": "2026-04-06",
-        "result": "7812"
-      },
-      {
-        "date": "2026-04-04",
-        "result": "9697"
-      },
-      {
-        "date": "2026-04-03",
-        "result": "1682"
-      },
-      {
-        "date": "2026-04-02",
-        "result": "1048"
-      },
-      {
-        "date": "2026-04-01",
-        "result": "2236"
-      },
-      {
-        "date": "2026-03-31",
-        "result": "5302"
-      },
-      {
-        "date": "2026-03-30",
-        "result": "8493"
-      },
-      {
-        "date": "2026-03-28",
-        "result": "0334"
-      },
-      {
-        "date": "2026-03-27",
-        "result": "1961"
-      },
-      {
-        "date": "2026-03-26",
-        "result": "6347"
-      },
-      {
-        "date": "2026-03-25",
-        "result": "5819"
-      },
-      {
-        "date": "2026-03-24",
-        "result": "4503"
-      },
-      {
-        "date": "2026-03-23",
-        "result": "0359"
-      },
-      {
-        "date": "2026-03-21",
-        "result": "4462"
-      },
-      {
-        "date": "2026-03-20",
-        "result": "2248"
-      },
-      {
-        "date": "2026-03-19",
-        "result": "7313"
-      },
-      {
-        "date": "2026-03-18",
-        "result": "1720"
-      },
-      {
-        "date": "2026-03-17",
-        "result": "1015"
-      },
-      {
-        "date": "2026-03-16",
-        "result": "5806"
-      },
-      {
-        "date": "2026-03-14",
-        "result": "6397"
-      },
-      {
-        "date": "2026-03-13",
-        "result": "5434"
-      },
-      {
-        "date": "2026-03-12",
-        "result": "1017"
-      },
-      {
-        "date": "2026-03-11",
-        "result": "8312"
-      },
-      {
-        "date": "2026-03-10",
         "result": "8081"
       },
       {
+        "date": "2026-04-21",
+        "result": "6020"
+      },
+      {
+        "date": "2026-04-20",
+        "result": "5350"
+      },
+      {
+        "date": "2026-04-18",
+        "result": "3005"
+      },
+      {
+        "date": "2026-04-17",
+        "result": "6156"
+      },
+      {
+        "date": "2026-04-16",
+        "result": "4739"
+      },
+      {
+        "date": "2026-04-15",
+        "result": "1028"
+      },
+      {
+        "date": "2026-04-14",
+        "result": "8352"
+      },
+      {
+        "date": "2026-04-13",
+        "result": "2275"
+      },
+      {
+        "date": "2026-04-11",
+        "result": "4089"
+      },
+      {
+        "date": "2026-04-10",
+        "result": "0144"
+      },
+      {
+        "date": "2026-04-09",
+        "result": "4321"
+      },
+      {
+        "date": "2026-04-08",
+        "result": "7023"
+      },
+      {
+        "date": "2026-04-07",
+        "result": "2534"
+      },
+      {
+        "date": "2026-04-06",
+        "result": "2458"
+      },
+      {
+        "date": "2026-04-04",
+        "result": "7812"
+      },
+      {
+        "date": "2026-04-03",
+        "result": "9697"
+      },
+      {
+        "date": "2026-04-02",
+        "result": "1682"
+      },
+      {
+        "date": "2026-04-01",
+        "result": "1048"
+      },
+      {
+        "date": "2026-03-31",
+        "result": "2236"
+      },
+      {
+        "date": "2026-03-30",
+        "result": "5302"
+      },
+      {
+        "date": "2026-03-28",
+        "result": "8493"
+      },
+      {
+        "date": "2026-03-27",
+        "result": "0334"
+      },
+      {
+        "date": "2026-03-26",
+        "result": "1961"
+      },
+      {
+        "date": "2026-03-25",
+        "result": "6347"
+      },
+      {
+        "date": "2026-03-24",
+        "result": "5819"
+      },
+      {
+        "date": "2026-03-23",
+        "result": "4503"
+      },
+      {
+        "date": "2026-03-21",
+        "result": "0359"
+      },
+      {
+        "date": "2026-03-20",
+        "result": "4462"
+      },
+      {
+        "date": "2026-03-19",
+        "result": "2248"
+      },
+      {
+        "date": "2026-03-18",
+        "result": "7313"
+      },
+      {
+        "date": "2026-03-17",
+        "result": "1720"
+      },
+      {
+        "date": "2026-03-16",
+        "result": "1015"
+      },
+      {
+        "date": "2026-03-14",
+        "result": "5806"
+      },
+      {
+        "date": "2026-03-13",
+        "result": "6397"
+      },
+      {
+        "date": "2026-03-12",
+        "result": "5434"
+      },
+      {
+        "date": "2026-03-11",
+        "result": "1017"
+      },
+      {
+        "date": "2026-03-10",
+        "result": "8312"
+      },
+      {
         "date": "2026-03-09",
-        "result": "4833"
+        "result": "8081"
       },
       {
         "date": "2026-03-07",
-        "result": "9360"
+        "result": "4833"
       },
       {
         "date": "2026-03-06",
-        "result": "0753"
+        "result": "9360"
       },
       {
         "date": "2026-03-05",
-        "result": "9501"
+        "result": "0753"
       },
       {
         "date": "2026-03-04",
-        "result": "8501"
+        "result": "9501"
       },
       {
         "date": "2026-03-03",
-        "result": "8730"
+        "result": "8501"
       },
       {
         "date": "2026-03-02",
-        "result": "3418"
+        "result": "8730"
       },
       {
         "date": "2026-02-28",
-        "result": "1966"
+        "result": "3418"
       },
       {
         "date": "2026-02-27",
-        "result": "8346"
+        "result": "1966"
       },
       {
         "date": "2026-02-26",
-        "result": "5721"
+        "result": "8346"
       },
       {
         "date": "2026-02-25",
-        "result": "9339"
+        "result": "5721"
       },
       {
         "date": "2026-02-24",
-        "result": "1769"
+        "result": "9339"
       },
       {
         "date": "2026-02-23",
-        "result": "5905"
+        "result": "1769"
       },
       {
         "date": "2026-02-21",
-        "result": "6863"
+        "result": "5905"
       },
       {
         "date": "2026-02-20",
-        "result": "5812"
+        "result": "6863"
       },
       {
         "date": "2026-02-19",
-        "result": "5167"
+        "result": "5812"
       },
       {
         "date": "2026-02-18",
-        "result": "6762"
+        "result": "5167"
       },
       {
         "date": "2026-02-17",
-        "result": "8463"
+        "result": "6762"
       },
       {
         "date": "2026-02-16",
-        "result": "6914"
+        "result": "8463"
       },
       {
         "date": "2026-02-14",
-        "result": "4070"
+        "result": "6914"
       },
       {
         "date": "2026-02-13",
-        "result": "5298"
+        "result": "4070"
       },
       {
         "date": "2026-02-12",
-        "result": "3842"
+        "result": "5298"
       },
       {
         "date": "2026-02-11",
-        "result": "9345"
+        "result": "3842"
       },
       {
         "date": "2026-02-10",
-        "result": "6002"
+        "result": "9345"
       },
       {
         "date": "2026-02-09",
-        "result": "4689"
+        "result": "6002"
       },
       {
         "date": "2026-02-07",
-        "result": "3806"
+        "result": "4689"
       },
       {
         "date": "2026-02-06",
-        "result": "2700"
+        "result": "3806"
       },
       {
         "date": "2026-02-05",
-        "result": "8167"
+        "result": "2700"
       },
       {
         "date": "2026-02-04",
-        "result": "6404"
+        "result": "8167"
       },
       {
         "date": "2026-02-03",
-        "result": "7466"
+        "result": "6404"
       },
       {
         "date": "2026-02-02",
-        "result": "2538"
+        "result": "7466"
       },
       {
         "date": "2026-01-31",
-        "result": "9752"
+        "result": "2538"
       },
       {
         "date": "2026-01-30",
-        "result": "5614"
+        "result": "9752"
       },
       {
         "date": "2026-01-29",
-        "result": "5774"
+        "result": "5614"
       },
       {
         "date": "2026-01-28",
-        "result": "8982"
+        "result": "5774"
       },
       {
         "date": "2026-01-27",
-        "result": "5743"
+        "result": "8982"
       },
       {
         "date": "2026-01-26",
-        "result": "6388"
+        "result": "5743"
       },
       {
         "date": "2026-01-24",
-        "result": "9673"
+        "result": "6388"
       },
       {
         "date": "2026-01-23",
-        "result": "5159"
+        "result": "9673"
       },
       {
         "date": "2026-01-22",
-        "result": "9951"
+        "result": "5159"
       },
       {
         "date": "2026-01-21",
-        "result": "2423"
+        "result": "9951"
       },
       {
         "date": "2026-01-20",
-        "result": "6978"
+        "result": "2423"
       }
     ]
   },
@@ -31322,7 +31322,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Missouri Midday",
     "history": [
       {
@@ -31928,7 +31928,7 @@
     ]
   },
   "moe": {
-    "result": "9476",
+    "result": "2971",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -31936,9 +31936,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Missouri Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "2971"
+      },
       {
         "date": "2026-07-11",
         "result": "9476"
@@ -32534,10 +32538,6 @@
       {
         "date": "2026-01-20",
         "result": "4750"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "5956"
       }
     ]
   },
@@ -32550,7 +32550,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "WDC Midday",
     "history": [
       {
@@ -33156,7 +33156,7 @@
     ]
   },
   "wde": {
-    "result": "9765",
+    "result": "5806",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -33164,9 +33164,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "WDC Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5806"
+      },
       {
         "date": "2026-07-11",
         "result": "9765"
@@ -33762,10 +33766,6 @@
       {
         "date": "2026-01-20",
         "result": "2626"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "9827"
       }
     ]
   },
@@ -33778,7 +33778,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Connecticut Day",
     "history": [
       {
@@ -34384,7 +34384,7 @@
     ]
   },
   "ctn": {
-    "result": "0024",
+    "result": "4795",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -34392,9 +34392,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Connecticut Night",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "4795"
+      },
       {
         "date": "2026-07-11",
         "result": "0024"
@@ -34990,10 +34994,6 @@
       {
         "date": "2026-01-20",
         "result": "4665"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "0341"
       }
     ]
   },
@@ -35006,7 +35006,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Virginia Day",
     "history": [
       {
@@ -35612,7 +35612,7 @@
     ]
   },
   "van": {
-    "result": "0078",
+    "result": "5567",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -35620,9 +35620,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Virginia Night",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5567"
+      },
       {
         "date": "2026-07-11",
         "result": "0078"
@@ -36218,10 +36222,6 @@
       {
         "date": "2026-01-20",
         "result": "6410"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "0533"
       }
     ]
   },
@@ -36234,7 +36234,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Tennessee Midday",
     "history": [
       {
@@ -36840,7 +36840,7 @@
     ]
   },
   "tne": {
-    "result": "7970",
+    "result": "1147",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -36848,9 +36848,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Tennessee Evening",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "1147"
+      },
       {
         "date": "2026-07-11",
         "result": "7970"
@@ -37446,10 +37450,6 @@
       {
         "date": "2026-01-20",
         "result": "7503"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "6727"
       }
     ]
   },
@@ -37462,7 +37462,7 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Tennessee Morning",
     "history": [
       {
@@ -38068,7 +38068,7 @@
     ]
   },
   "cal": {
-    "result": "4242",
+    "result": "5763",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -38076,9 +38076,13 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "California",
     "history": [
+      {
+        "date": "2026-07-13",
+        "result": "5763"
+      },
       {
         "date": "2026-07-11",
         "result": "4242"
@@ -38674,15 +38678,11 @@
       {
         "date": "2026-01-20",
         "result": "7585"
-      },
-      {
-        "date": "2026-01-19",
-        "result": "0372"
       }
     ]
   },
   "wie": {
-    "result": "0967",
+    "result": "5252",
     "tgl": "13/07",
     "fetch_date": [
       2026,
@@ -38690,613 +38690,613 @@
       13
     ],
     "status": "sudah",
-    "updated": "05:33 WIB",
+    "updated": "17:42 WIB",
     "name": "Wisconsin Evening",
     "history": [
       {
         "date": "2026-07-13",
-        "result": "0967"
-      },
-      {
-        "date": "2026-07-11",
-        "result": "2002"
-      },
-      {
-        "date": "2026-07-10",
-        "result": "8424"
-      },
-      {
-        "date": "2026-07-09",
-        "result": "2503"
-      },
-      {
-        "date": "2026-07-08",
-        "result": "7763"
-      },
-      {
-        "date": "2026-07-07",
-        "result": "1362"
-      },
-      {
-        "date": "2026-07-06",
-        "result": "5807"
-      },
-      {
-        "date": "2026-07-04",
-        "result": "6603"
-      },
-      {
-        "date": "2026-07-03",
-        "result": "7371"
-      },
-      {
-        "date": "2026-07-02",
-        "result": "1509"
-      },
-      {
-        "date": "2026-07-01",
-        "result": "6201"
-      },
-      {
-        "date": "2026-06-30",
-        "result": "5146"
-      },
-      {
-        "date": "2026-06-29",
-        "result": "9608"
-      },
-      {
-        "date": "2026-06-27",
-        "result": "3943"
-      },
-      {
-        "date": "2026-06-26",
-        "result": "4838"
-      },
-      {
-        "date": "2026-06-25",
-        "result": "3394"
-      },
-      {
-        "date": "2026-06-24",
-        "result": "3057"
-      },
-      {
-        "date": "2026-06-23",
-        "result": "1546"
-      },
-      {
-        "date": "2026-06-22",
-        "result": "3951"
-      },
-      {
-        "date": "2026-06-20",
-        "result": "9824"
-      },
-      {
-        "date": "2026-06-19",
-        "result": "3651"
-      },
-      {
-        "date": "2026-06-18",
-        "result": "7573"
-      },
-      {
-        "date": "2026-06-17",
-        "result": "5626"
-      },
-      {
-        "date": "2026-06-16",
-        "result": "4053"
-      },
-      {
-        "date": "2026-06-15",
-        "result": "4125"
-      },
-      {
-        "date": "2026-06-13",
-        "result": "9109"
-      },
-      {
-        "date": "2026-06-12",
-        "result": "8642"
-      },
-      {
-        "date": "2026-06-11",
-        "result": "3530"
-      },
-      {
-        "date": "2026-06-10",
-        "result": "6467"
-      },
-      {
-        "date": "2026-06-09",
-        "result": "6248"
-      },
-      {
-        "date": "2026-06-08",
-        "result": "8041"
-      },
-      {
-        "date": "2026-06-06",
-        "result": "9626"
-      },
-      {
-        "date": "2026-06-05",
-        "result": "2953"
-      },
-      {
-        "date": "2026-06-04",
-        "result": "8892"
-      },
-      {
-        "date": "2026-06-03",
-        "result": "8095"
-      },
-      {
-        "date": "2026-06-02",
-        "result": "6719"
-      },
-      {
-        "date": "2026-06-01",
-        "result": "5599"
-      },
-      {
-        "date": "2026-05-30",
-        "result": "8667"
-      },
-      {
-        "date": "2026-05-29",
-        "result": "5796"
-      },
-      {
-        "date": "2026-05-28",
-        "result": "4475"
-      },
-      {
-        "date": "2026-05-27",
-        "result": "3206"
-      },
-      {
-        "date": "2026-05-26",
-        "result": "1326"
-      },
-      {
-        "date": "2026-05-25",
-        "result": "3788"
-      },
-      {
-        "date": "2026-05-23",
-        "result": "3466"
-      },
-      {
-        "date": "2026-05-22",
-        "result": "7926"
-      },
-      {
-        "date": "2026-05-21",
-        "result": "4786"
-      },
-      {
-        "date": "2026-05-20",
-        "result": "1382"
-      },
-      {
-        "date": "2026-05-19",
-        "result": "6994"
-      },
-      {
-        "date": "2026-05-18",
-        "result": "1337"
-      },
-      {
-        "date": "2026-05-16",
-        "result": "9087"
-      },
-      {
-        "date": "2026-05-15",
-        "result": "1745"
-      },
-      {
-        "date": "2026-05-14",
-        "result": "4515"
-      },
-      {
-        "date": "2026-05-13",
-        "result": "3138"
-      },
-      {
-        "date": "2026-05-12",
-        "result": "6736"
-      },
-      {
-        "date": "2026-05-11",
-        "result": "2474"
-      },
-      {
-        "date": "2026-05-09",
-        "result": "9525"
-      },
-      {
-        "date": "2026-05-08",
-        "result": "7684"
-      },
-      {
-        "date": "2026-05-07",
-        "result": "7713"
-      },
-      {
-        "date": "2026-05-06",
-        "result": "2426"
-      },
-      {
-        "date": "2026-05-05",
-        "result": "7615"
-      },
-      {
-        "date": "2026-05-04",
-        "result": "9773"
-      },
-      {
-        "date": "2026-05-02",
-        "result": "2424"
-      },
-      {
-        "date": "2026-05-01",
-        "result": "5050"
-      },
-      {
-        "date": "2026-04-30",
-        "result": "3351"
-      },
-      {
-        "date": "2026-04-29",
-        "result": "8280"
-      },
-      {
-        "date": "2026-04-28",
-        "result": "5545"
-      },
-      {
-        "date": "2026-04-27",
-        "result": "5950"
-      },
-      {
-        "date": "2026-04-25",
-        "result": "7564"
-      },
-      {
-        "date": "2026-04-24",
-        "result": "1019"
-      },
-      {
-        "date": "2026-04-23",
-        "result": "0457"
-      },
-      {
-        "date": "2026-04-22",
-        "result": "9212"
-      },
-      {
-        "date": "2026-04-21",
-        "result": "7847"
-      },
-      {
-        "date": "2026-04-20",
-        "result": "8862"
-      },
-      {
-        "date": "2026-04-18",
-        "result": "7888"
-      },
-      {
-        "date": "2026-04-17",
-        "result": "0857"
-      },
-      {
-        "date": "2026-04-16",
-        "result": "7067"
-      },
-      {
-        "date": "2026-04-15",
-        "result": "0441"
-      },
-      {
-        "date": "2026-04-14",
-        "result": "0529"
-      },
-      {
-        "date": "2026-04-13",
-        "result": "7778"
-      },
-      {
-        "date": "2026-04-11",
-        "result": "7031"
-      },
-      {
-        "date": "2026-04-10",
-        "result": "2913"
-      },
-      {
-        "date": "2026-04-09",
-        "result": "4187"
-      },
-      {
-        "date": "2026-04-08",
-        "result": "4988"
-      },
-      {
-        "date": "2026-04-07",
-        "result": "4667"
-      },
-      {
-        "date": "2026-04-06",
-        "result": "3266"
-      },
-      {
-        "date": "2026-04-04",
-        "result": "3340"
-      },
-      {
-        "date": "2026-04-03",
-        "result": "7892"
-      },
-      {
-        "date": "2026-04-02",
-        "result": "3419"
-      },
-      {
-        "date": "2026-04-01",
-        "result": "6146"
-      },
-      {
-        "date": "2026-03-31",
-        "result": "9686"
-      },
-      {
-        "date": "2026-03-30",
-        "result": "9234"
-      },
-      {
-        "date": "2026-03-28",
-        "result": "4978"
-      },
-      {
-        "date": "2026-03-27",
-        "result": "8781"
-      },
-      {
-        "date": "2026-03-26",
-        "result": "1567"
-      },
-      {
-        "date": "2026-03-25",
-        "result": "4123"
-      },
-      {
-        "date": "2026-03-24",
-        "result": "7655"
-      },
-      {
-        "date": "2026-03-23",
-        "result": "9557"
-      },
-      {
-        "date": "2026-03-21",
-        "result": "9335"
-      },
-      {
-        "date": "2026-03-20",
-        "result": "3379"
-      },
-      {
-        "date": "2026-03-19",
-        "result": "4830"
-      },
-      {
-        "date": "2026-03-18",
-        "result": "5233"
-      },
-      {
-        "date": "2026-03-17",
-        "result": "4746"
-      },
-      {
-        "date": "2026-03-16",
-        "result": "2706"
-      },
-      {
-        "date": "2026-03-14",
-        "result": "9076"
-      },
-      {
-        "date": "2026-03-13",
         "result": "5252"
       },
       {
+        "date": "2026-07-11",
+        "result": "0967"
+      },
+      {
+        "date": "2026-07-10",
+        "result": "2002"
+      },
+      {
+        "date": "2026-07-09",
+        "result": "8424"
+      },
+      {
+        "date": "2026-07-08",
+        "result": "2503"
+      },
+      {
+        "date": "2026-07-07",
+        "result": "7763"
+      },
+      {
+        "date": "2026-07-06",
+        "result": "1362"
+      },
+      {
+        "date": "2026-07-04",
+        "result": "5807"
+      },
+      {
+        "date": "2026-07-03",
+        "result": "6603"
+      },
+      {
+        "date": "2026-07-02",
+        "result": "7371"
+      },
+      {
+        "date": "2026-07-01",
+        "result": "1509"
+      },
+      {
+        "date": "2026-06-30",
+        "result": "6201"
+      },
+      {
+        "date": "2026-06-29",
+        "result": "5146"
+      },
+      {
+        "date": "2026-06-27",
+        "result": "9608"
+      },
+      {
+        "date": "2026-06-26",
+        "result": "3943"
+      },
+      {
+        "date": "2026-06-25",
+        "result": "4838"
+      },
+      {
+        "date": "2026-06-24",
+        "result": "3394"
+      },
+      {
+        "date": "2026-06-23",
+        "result": "3057"
+      },
+      {
+        "date": "2026-06-22",
+        "result": "1546"
+      },
+      {
+        "date": "2026-06-20",
+        "result": "3951"
+      },
+      {
+        "date": "2026-06-19",
+        "result": "9824"
+      },
+      {
+        "date": "2026-06-18",
+        "result": "3651"
+      },
+      {
+        "date": "2026-06-17",
+        "result": "7573"
+      },
+      {
+        "date": "2026-06-16",
+        "result": "5626"
+      },
+      {
+        "date": "2026-06-15",
+        "result": "4053"
+      },
+      {
+        "date": "2026-06-13",
+        "result": "4125"
+      },
+      {
+        "date": "2026-06-12",
+        "result": "9109"
+      },
+      {
+        "date": "2026-06-11",
+        "result": "8642"
+      },
+      {
+        "date": "2026-06-10",
+        "result": "3530"
+      },
+      {
+        "date": "2026-06-09",
+        "result": "6467"
+      },
+      {
+        "date": "2026-06-08",
+        "result": "6248"
+      },
+      {
+        "date": "2026-06-06",
+        "result": "8041"
+      },
+      {
+        "date": "2026-06-05",
+        "result": "9626"
+      },
+      {
+        "date": "2026-06-04",
+        "result": "2953"
+      },
+      {
+        "date": "2026-06-03",
+        "result": "8892"
+      },
+      {
+        "date": "2026-06-02",
+        "result": "8095"
+      },
+      {
+        "date": "2026-06-01",
+        "result": "6719"
+      },
+      {
+        "date": "2026-05-30",
+        "result": "5599"
+      },
+      {
+        "date": "2026-05-29",
+        "result": "8667"
+      },
+      {
+        "date": "2026-05-28",
+        "result": "5796"
+      },
+      {
+        "date": "2026-05-27",
+        "result": "4475"
+      },
+      {
+        "date": "2026-05-26",
+        "result": "3206"
+      },
+      {
+        "date": "2026-05-25",
+        "result": "1326"
+      },
+      {
+        "date": "2026-05-23",
+        "result": "3788"
+      },
+      {
+        "date": "2026-05-22",
+        "result": "3466"
+      },
+      {
+        "date": "2026-05-21",
+        "result": "7926"
+      },
+      {
+        "date": "2026-05-20",
+        "result": "4786"
+      },
+      {
+        "date": "2026-05-19",
+        "result": "1382"
+      },
+      {
+        "date": "2026-05-18",
+        "result": "6994"
+      },
+      {
+        "date": "2026-05-16",
+        "result": "1337"
+      },
+      {
+        "date": "2026-05-15",
+        "result": "9087"
+      },
+      {
+        "date": "2026-05-14",
+        "result": "1745"
+      },
+      {
+        "date": "2026-05-13",
+        "result": "4515"
+      },
+      {
+        "date": "2026-05-12",
+        "result": "3138"
+      },
+      {
+        "date": "2026-05-11",
+        "result": "6736"
+      },
+      {
+        "date": "2026-05-09",
+        "result": "2474"
+      },
+      {
+        "date": "2026-05-08",
+        "result": "9525"
+      },
+      {
+        "date": "2026-05-07",
+        "result": "7684"
+      },
+      {
+        "date": "2026-05-06",
+        "result": "7713"
+      },
+      {
+        "date": "2026-05-05",
+        "result": "2426"
+      },
+      {
+        "date": "2026-05-04",
+        "result": "7615"
+      },
+      {
+        "date": "2026-05-02",
+        "result": "9773"
+      },
+      {
+        "date": "2026-05-01",
+        "result": "2424"
+      },
+      {
+        "date": "2026-04-30",
+        "result": "5050"
+      },
+      {
+        "date": "2026-04-29",
+        "result": "3351"
+      },
+      {
+        "date": "2026-04-28",
+        "result": "8280"
+      },
+      {
+        "date": "2026-04-27",
+        "result": "5545"
+      },
+      {
+        "date": "2026-04-25",
+        "result": "5950"
+      },
+      {
+        "date": "2026-04-24",
+        "result": "7564"
+      },
+      {
+        "date": "2026-04-23",
+        "result": "1019"
+      },
+      {
+        "date": "2026-04-22",
+        "result": "0457"
+      },
+      {
+        "date": "2026-04-21",
+        "result": "9212"
+      },
+      {
+        "date": "2026-04-20",
+        "result": "7847"
+      },
+      {
+        "date": "2026-04-18",
+        "result": "8862"
+      },
+      {
+        "date": "2026-04-17",
+        "result": "7888"
+      },
+      {
+        "date": "2026-04-16",
+        "result": "0857"
+      },
+      {
+        "date": "2026-04-15",
+        "result": "7067"
+      },
+      {
+        "date": "2026-04-14",
+        "result": "0441"
+      },
+      {
+        "date": "2026-04-13",
+        "result": "0529"
+      },
+      {
+        "date": "2026-04-11",
+        "result": "7778"
+      },
+      {
+        "date": "2026-04-10",
+        "result": "7031"
+      },
+      {
+        "date": "2026-04-09",
+        "result": "2913"
+      },
+      {
+        "date": "2026-04-08",
+        "result": "4187"
+      },
+      {
+        "date": "2026-04-07",
+        "result": "4988"
+      },
+      {
+        "date": "2026-04-06",
+        "result": "4667"
+      },
+      {
+        "date": "2026-04-04",
+        "result": "3266"
+      },
+      {
+        "date": "2026-04-03",
+        "result": "3340"
+      },
+      {
+        "date": "2026-04-02",
+        "result": "7892"
+      },
+      {
+        "date": "2026-04-01",
+        "result": "3419"
+      },
+      {
+        "date": "2026-03-31",
+        "result": "6146"
+      },
+      {
+        "date": "2026-03-30",
+        "result": "9686"
+      },
+      {
+        "date": "2026-03-28",
+        "result": "9234"
+      },
+      {
+        "date": "2026-03-27",
+        "result": "4978"
+      },
+      {
+        "date": "2026-03-26",
+        "result": "8781"
+      },
+      {
+        "date": "2026-03-25",
+        "result": "1567"
+      },
+      {
+        "date": "2026-03-24",
+        "result": "4123"
+      },
+      {
+        "date": "2026-03-23",
+        "result": "7655"
+      },
+      {
+        "date": "2026-03-21",
+        "result": "9557"
+      },
+      {
+        "date": "2026-03-20",
+        "result": "9335"
+      },
+      {
+        "date": "2026-03-19",
+        "result": "3379"
+      },
+      {
+        "date": "2026-03-18",
+        "result": "4830"
+      },
+      {
+        "date": "2026-03-17",
+        "result": "5233"
+      },
+      {
+        "date": "2026-03-16",
+        "result": "4746"
+      },
+      {
+        "date": "2026-03-14",
+        "result": "2706"
+      },
+      {
+        "date": "2026-03-13",
+        "result": "9076"
+      },
+      {
         "date": "2026-03-12",
-        "result": "0804"
+        "result": "5252"
       },
       {
         "date": "2026-03-11",
-        "result": "6970"
+        "result": "0804"
       },
       {
         "date": "2026-03-10",
-        "result": "4413"
+        "result": "6970"
       },
       {
         "date": "2026-03-09",
-        "result": "1795"
+        "result": "4413"
       },
       {
         "date": "2026-03-07",
-        "result": "9190"
+        "result": "1795"
       },
       {
         "date": "2026-03-06",
-        "result": "1874"
+        "result": "9190"
       },
       {
         "date": "2026-03-05",
-        "result": "9439"
+        "result": "1874"
       },
       {
         "date": "2026-03-04",
-        "result": "6112"
+        "result": "9439"
       },
       {
         "date": "2026-03-03",
-        "result": "1571"
+        "result": "6112"
       },
       {
         "date": "2026-03-02",
-        "result": "1196"
+        "result": "1571"
       },
       {
         "date": "2026-02-28",
-        "result": "4770"
+        "result": "1196"
       },
       {
         "date": "2026-02-27",
-        "result": "1839"
+        "result": "4770"
       },
       {
         "date": "2026-02-26",
-        "result": "0925"
+        "result": "1839"
       },
       {
         "date": "2026-02-25",
-        "result": "8090"
+        "result": "0925"
       },
       {
         "date": "2026-02-24",
-        "result": "2387"
+        "result": "8090"
       },
       {
         "date": "2026-02-23",
-        "result": "5683"
+        "result": "2387"
       },
       {
         "date": "2026-02-21",
-        "result": "6424"
+        "result": "5683"
       },
       {
         "date": "2026-02-20",
-        "result": "2090"
+        "result": "6424"
       },
       {
         "date": "2026-02-19",
-        "result": "7686"
+        "result": "2090"
       },
       {
         "date": "2026-02-18",
-        "result": "4876"
+        "result": "7686"
       },
       {
         "date": "2026-02-17",
-        "result": "4784"
+        "result": "4876"
       },
       {
         "date": "2026-02-16",
-        "result": "4034"
+        "result": "4784"
       },
       {
         "date": "2026-02-14",
-        "result": "0688"
+        "result": "4034"
       },
       {
         "date": "2026-02-13",
-        "result": "7127"
+        "result": "0688"
       },
       {
         "date": "2026-02-12",
-        "result": "2016"
+        "result": "7127"
       },
       {
         "date": "2026-02-11",
-        "result": "7387"
+        "result": "2016"
       },
       {
         "date": "2026-02-10",
-        "result": "4765"
+        "result": "7387"
       },
       {
         "date": "2026-02-09",
-        "result": "8572"
+        "result": "4765"
       },
       {
         "date": "2026-02-07",
-        "result": "1988"
+        "result": "8572"
       },
       {
         "date": "2026-02-06",
-        "result": "5969"
+        "result": "1988"
       },
       {
         "date": "2026-02-05",
-        "result": "9113"
+        "result": "5969"
       },
       {
         "date": "2026-02-04",
-        "result": "4893"
+        "result": "9113"
       },
       {
         "date": "2026-02-03",
-        "result": "0035"
+        "result": "4893"
       },
       {
         "date": "2026-02-02",
-        "result": "0846"
+        "result": "0035"
       },
       {
         "date": "2026-01-31",
-        "result": "6063"
+        "result": "0846"
       },
       {
         "date": "2026-01-30",
-        "result": "8869"
+        "result": "6063"
       },
       {
         "date": "2026-01-29",
-        "result": "0171"
+        "result": "8869"
       },
       {
         "date": "2026-01-28",
-        "result": "3659"
+        "result": "0171"
       },
       {
         "date": "2026-01-27",
-        "result": "0752"
+        "result": "3659"
       },
       {
         "date": "2026-01-26",
-        "result": "3330"
+        "result": "0752"
       },
       {
         "date": "2026-01-24",
-        "result": "3611"
+        "result": "3330"
       },
       {
         "date": "2026-01-23",
-        "result": "2531"
+        "result": "3611"
       },
       {
         "date": "2026-01-22",
-        "result": "8957"
+        "result": "2531"
       },
       {
         "date": "2026-01-21",
-        "result": "2213"
+        "result": "8957"
       },
       {
         "date": "2026-01-20",
-        "result": "2837"
+        "result": "2213"
       }
     ]
   },
   "_meta": {
-    "updated": "2026-07-13 05:33 WIB",
+    "updated": "2026-07-13 17:42 WIB",
     "date": "13/07",
     "today_str": "2026-07-13",
     "total": 64,
