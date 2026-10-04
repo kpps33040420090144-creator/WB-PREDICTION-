@@ -5,7 +5,7 @@ window.WB_JSONBIN_CONFIG = {
 
   // Bin per halaman scan — bank rumus tiap scan disimpan terpisah di sini
   bankBins: {
-    scan1: '6abb0a05ffd5d1609339bc7a',
+    scan1: '6abb0a65ffd5d1605339bc7a',
     scan2: '6abb0aa4ac6210605a001f19',
     scan3: '6abb0ad8ac6210605a001f82',
     scan4: '6abb0b34ac6210605a002036',
