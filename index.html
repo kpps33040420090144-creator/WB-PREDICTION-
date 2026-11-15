@@ -375,7 +375,7 @@ input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--bo
   </div>
 
   <div id="adm-pane-bankview" style="display:none">
-    <p class="small" style="padding:0 14px 8px">Isi bank rumus yang di-save tiap member (Scan 1&ndash;5, Prediksi, Harian, Otomatis). Data dimuat saat kamu tap &quot;Muat&quot;.</p>
+    <p class="small" style="padding:0 14px 8px">Isi bank rumus yang di-save tiap member (Scan 1&ndash;5, Prediksi, Harian, Otomatis, Shio, Rumus). Data dimuat saat kamu tap &quot;Muat&quot;.</p>
     <div style="display:flex;gap:8px;align-items:stretch;padding:0 14px 10px">
       <input class="adm-search" id="adm-bv-search" style="flex:1;margin:0;min-width:0" placeholder="🔍 Cari nama / no HP..." oninput="wbRenderBankView(true)">
       <button onclick="wbBVLoadAll()" style="padding:0 14px;border-radius:10px;border:1px solid rgba(34,211,238,.4);background:rgba(34,211,238,.1);color:var(--cyan);font-weight:800;font-size:13px;cursor:pointer">🔄 Muat semua</button>
@@ -507,6 +507,7 @@ const WB_FEATURES = [
   { grp:'Menu',          key:'scan3', label:'Scan 3',      file:'scan3.html' },
   { grp:'Menu',          key:'scan4', label:'Scan 4',      file:'scan4.html' },
   { grp:'Menu',          key:'scan5', label:'Scan 5',      file:'scan5.html' },
+  { grp:'Menu',          key:'rumus', label:'Rumus',       file:'rumus.html' },
   { grp:'Menu',          key:'blog',  label:'Blog',        file:'blog.html', url:'https://angkahoky187-crypto.github.io/MASTER', pub:true },
   // Scen Prediksi (halaman prediksi.html). Tile "Prediksi Auto" di menu hanya jadi pintu masuk: hilang kalau SEMUA scen di bawah ini terkunci.
   { grp:'Scen Prediksi', key:'prediksi',      label:'Prediksi',      file:'prediksi.html', tile:'Prediksi Auto' },
@@ -1401,7 +1402,7 @@ async function wbDoResetPw(memberId, uid){
 // sendiri (bin yang sama dengan data member) — bukan localStorage lagi.
 // Jadi baca/tulisnya langsung lewat WB_ALL_USERS / jGetMembers-jSaveMembers.
 // ══════════════════════════════════════════════════════════
-const WB_APP_LABEL = { scan1:'Scan 1', scan2:'Scan 2', scan3:'Scan 3', scan4:'Scan 4', scan5:'Scan 5', prediksi:'Prediksi Auto' };
+const WB_APP_LABEL = { scan1:'Scan 1', scan2:'Scan 2', scan3:'Scan 3', scan4:'Scan 4', scan5:'Scan 5', prediksi:'Prediksi Auto', harian:'Harian', otomatis:'Otomatis', shio:'Shio', rumus:'Rumus' };
 function wbAppLabel(app){
   if(WB_APP_LABEL[app]) return WB_APP_LABEL[app];
   const base = app.split('_')[0];
@@ -1826,10 +1827,11 @@ function wbBVItemHtml(it,cid){
 function wbBVTrekToggle(cid){ _wbBVTrek[cid]=!_wbBVTrek[cid]; wbRenderBankView(true); }
 /* ===== Bank per member, dipisah per bank: Scan 1-5, Prediksi, Harian, Otomatis ===== */
 /* Bank Harian & Otomatis tersimpan di halaman 'default' yang tidak dipindai WB_BANK.listApps (beda-beda tiap akun), jadi dibaca langsung lewat get(). wb-member-bank.js tidak diubah. */
-async function wbBVAppIds(mid){const ids=await WB_BANK.listApps(mid);['harian','otomatis'].forEach(a=>{if(!ids.includes(a))ids.push(a);});return ids;}
-const WB_BV_ORDER=['scan1','scan2','scan3','scan4','scan5','prediksi','harian','otomatis'];
+async function wbBVAppIds(mid){const ids=await WB_BANK.listApps(mid);['harian','otomatis','rumus','shio'].forEach(a=>{if(!ids.includes(a))ids.push(a);});return ids;}
+const WB_BV_ORDER=['scan1','scan2','scan3','scan4','scan5','prediksi','harian','otomatis','shio','rumus'];
 const WB_BV_META={scan1:['🏦','Scan 1','#22d3ee'],scan2:['🏦','Scan 2','#38bdf8'],scan3:['🏦','Scan 3','#818cf8'],scan4:['🏦','Scan 4','#34d399'],scan5:['🏦','Scan 5','#f472b6'],
-  prediksi:['💾','Bank Prediksi','#c4b5fd'],harian:['📅','Bank Harian','#fbbf24'],otomatis:['🤖','Bank Otomatis (Rekap / Scan 1)','#34d399']};
+  prediksi:['💾','Bank Prediksi','#c4b5fd'],harian:['📅','Bank Harian','#fbbf24'],otomatis:['🤖','Bank Otomatis (Rekap / Scan 1)','#34d399'],
+  shio:['🐉','Bank Shio','#fb923c'],rumus:['🧮','Bank Rumus (Harian)','#f59e0b']};
 function wbBVAppMeta(app){const base=app.split('_')[0],m=WB_BV_META[base]||['🏦','Bank '+wbAppLabel(app),'#22d3ee'];
   return [m[0],m[1]+(app.includes('_')&&WB_BV_META[base]?' · '+app.split('_').slice(1).join('_'):''),m[2]];}
 function wbBVAppRank(app){const i=WB_BV_ORDER.indexOf(app.split('_')[0]);return i<0?99:i;}
@@ -1947,7 +1949,7 @@ function wbRenderBankView(){
 }
 function wbBVToggle(mid){ _wbBVOpen[mid]=!_wbBVOpen[mid]; wbRenderBankView(); }
 async function wbClearMemberBank(memberId){
-  if(!confirm('Hapus semua rumus bank member ini di SEMUA bank (Scan 1-5, Prediksi, Harian, Otomatis)? Tidak bisa dibatalkan!')) return;
+  if(!confirm('Hapus semua rumus bank member ini di SEMUA bank (Scan 1-5, Prediksi, Harian, Otomatis, Shio, Rumus)? Tidak bisa dibatalkan!')) return;
   try{
     const appIds=await wbBVAppIds(memberId);
     for(const app of appIds){ await WB_BANK.clear(app, memberId); }

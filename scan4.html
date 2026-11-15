@@ -507,7 +507,7 @@ function streakColor(n) {
         return { ac: '#3b82f6', rgb: '59,130,246' };
     return { ac: '#64748b', rgb: '100,116,139' };
 }
-const COPY_LINK = 'https://angkahoky187-crypto.github.io/MASTER';
+const COPY_LINK = 'https://angkahoky187-crypto.github.io/MASTER/';
 function withLink(t) { t = String(t == null ? '' : t); return t.includes(COPY_LINK) ? t : t.replace(/\s+$/, '') + '\n\n' + COPY_LINK; }
 function copyStr(txt) {
     txt = withLink(txt);
@@ -957,7 +957,7 @@ function App() {
             const last = i === r.trekRows.length - 1;
             if (last)
                 return `${row.result} : ${row.predStr} ?`;
-            return `${row.result} : ${row.predStr} ${row.hit ? short : '✗'}`;
+            return `${row.result} : ${row.predStr}${row.hit ? '' : ' ✗'}`;
         }).join('\n');
         const predStr = r.curPred ? r.curPred.join('') : '??';
         return `📍 ${flag(mktId || mkt)} ${info.name}\n🔑 Code : ${r.key}\n📅 Rumus : ${head} ${(r.nDigit || 2)} Digit\n\n${rows}\n\n${head} : ${predStr}\n${'='.repeat(14)}\n${r.streak} putaran | patah 0x`;
@@ -1115,7 +1115,7 @@ function App() {
             const last = i === (item.trekRows.length - 1);
             if (last)
                 return `${row.result} : ${row.predStr} ?`;
-            return `${row.result} : ${row.predStr} ${row.hit ? short : '✗'}`;
+            return `${row.result} : ${row.predStr}${row.hit ? '' : ' ✗'}`;
         }).join('\n');
         const predStr = item.curPred ? item.curPred.join('') : '??';
         const patahCount = (item.trekRows || []).filter(row => row.hit === false).length;
@@ -1163,7 +1163,7 @@ function App() {
                 const rows = (item.trekRows || []).map((row, i) => {
                     const last = i === (item.trekRows.length - 1);
                     if (last) return `${row.result} : ${row.predStr} ?`;
-                    return `${row.result} : ${row.predStr} ${short}`;
+                    return `${row.result} : ${row.predStr}`;
                 }).join('\n');
                 const predStr = item.curPred ? item.curPred.join('') : '??';
                 const patahCount = (item.trekRows || []).filter(row => row.hit === false).length;
@@ -1410,6 +1410,18 @@ function App() {
                         })))))));
     }
     // ── TAB BANK ──
+    /* sub-kelompok per jenis rumus di tiap pasaran (sama seperti Bank Prediksi) */
+    function wbfSubMap(items, mk, fn) {
+        const ord = Object.keys(MODE_LABEL), by = new Map();
+        items.forEach(it => { const k = it.scanMode || 'ai'; if (!by.has(k)) by.set(k, []); by.get(k).push(it); });
+        const out = [];
+        [...by.keys()].sort((a, b) => ord.indexOf(a) - ord.indexOf(b)).forEach(k => {
+            const a = by.get(k).slice().sort((x, y) => (y.streak || 0) - (x.streak || 0));
+            out.push(React.createElement("div", { key: 'wbfs-' + mk + '-' + k, className: 'wbf-sub' }, (MODE_LABEL[k] || k) + ' \u00B7 ' + a.length + ' trek'));
+            a.forEach(it => out.push(fn(it)));
+        });
+        return out;
+    }
     function renderBank() {
         const selAll = bankSel.length === bank.length && bank.length > 0;
         return (React.createElement("div", { className: "panel" },
@@ -1501,7 +1513,7 @@ function App() {
                                 React.createElement("div", { className: "bank-group-info" },
                                     React.createElement("span", null, "\uD83C\uDFAF Keluaran: ", React.createElement("b", { className: "bgi-res" }, getHist(mktKey)[0] || '----'), info.tgl ? ' \u00B7 ' + info.tgl : ''),
                                     React.createElement("span", { className: "bgi-jam" }, "\u23F0 Tutup " + closeLabel(mktKey)))),
-                            groupItems.map(item => {
+                            wbfSubMap(groupItems, mktKey, item => {
                                 const sc = streakColor(item.streak || 0);
                                 const sel = bankSel.includes(item.id);
                                 const pred = item.curPred ? item.curPred.join(' ') : '??';
@@ -1712,7 +1724,7 @@ function App() {
                             g.codes.forEach((c, i) => lines.push(`Code ${i + 1} : ${c}`));
                             lines.push('');
                             const rowLabel = g.labels ? [...new Set(g.labels)].join('/').toUpperCase() : 'AI';
-                            g.rows.forEach(row => lines.push(`${row.result} : ${row.preds.join(' vs ')} ${row.isNext ? '?' : rowLabel}`));
+                            g.rows.forEach(row => lines.push(`${row.result} : ${row.preds.join(' vs ')}${row.isNext ? ' ?' : (row.anyHit ? '' : ' ✗')}`));
                             lines.push('');
                             lines.push(`${rowLabel} : ${lastRow ? lastRow.preds.join(' vs ') : '-'}`);
                             lines.push('='.repeat(15));
@@ -1764,5 +1776,66 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
 
 
 </script>
+
+<script id="wbfold">
+/* Kelompok & lipat per pasaran di Bank (sama seperti Bank Prediksi): ketuk judul pasaran = buka/tutup,
+   tombol "Pilih aktif" per pasaran, Buka/Tutup semua. Tidak mengubah data bank. */
+(function(C){
+  var COL=new Set(),SKEY='wbf_col_'+C.id,obs=null,timer=null;
+  try{JSON.parse(localStorage.getItem(SKEY)||'[]').forEach(function(k){COL.add(k);});}catch(e){}
+  var st=document.createElement('style');
+  st.textContent='.wbf-hide{display:none!important}.wbf-h{cursor:pointer}.wbf-arr{margin-right:6px;color:#ffc933;font-weight:800}'+
+   '.wbf-sub{margin:10px 0 2px;padding:5px 10px;border-radius:6px;background:#1c2a44;color:#ffc933;font-weight:800;font-size:12px}'+
+   'tr.wbf-subrow>td{padding:6px 8px}.wbf-pick{margin-left:6px;padding:3px 8px;border-radius:6px;border:1px solid #2a3b5e;background:#111a2e;color:#e6ecff;font-size:10px;font-weight:700;cursor:pointer}'+
+   '#wbfBar{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}#wbfBar button{flex:1 1 auto;padding:7px 8px;border-radius:8px;border:1px solid #2a3b5e;background:#111a2e;color:#e6ecff;font-size:11px;font-weight:700;cursor:pointer}';
+  document.head.appendChild(st);
+  function hdrs(){return [].slice.call(document.querySelectorAll(C.hdr));}
+  function key(h){var n=C.name?h.querySelector(C.name):null;return ((n||h).textContent||'').replace(/\s+/g,' ').trim().slice(0,60);}
+  function sibs(h){var a=[],n=h.nextElementSibling;while(n&&!n.matches(C.hdr)&&!(C.stop&&n.matches(C.stop))){a.push(n);n=n.nextElementSibling;}return a;}
+  function save(){try{localStorage.setItem(SKEY,JSON.stringify([].slice.call(COL)));}catch(e){}}
+  function pickIds(h){return sibs(h).filter(function(el){return !C.patah(el)&&el.querySelector(C.chk);});}
+  function setChk(els,on){els.forEach(function(el){var c=el.querySelector(C.chk);if(c&&c.checked!==on)c.click();});}
+  function apply(){
+    var hs=hdrs();
+    hs.forEach(function(h){
+      var k=key(h),c=COL.has(k);
+      if(!h.classList.contains('wbf-h')){
+        h.classList.add('wbf-h');
+        var a=document.createElement('span');a.className='wbf-arr';h.insertBefore(a,h.firstChild);
+        var b=document.createElement('button');b.type='button';b.className='wbf-pick';b.textContent='☑ Pilih aktif';b.setAttribute('data-wbf','pick');h.appendChild(b);
+      }
+      var arr=h.querySelector('.wbf-arr');if(arr)arr.textContent=c?'▸':'▾';
+      sibs(h).forEach(function(s){s.classList.toggle('wbf-hide',c);});
+    });
+    var bar=document.getElementById('wbfBar');
+    if(hs.length&&!bar){
+      bar=document.createElement('div');bar.id='wbfBar';
+      bar.innerHTML='<button type="button" data-wbf="open">⏬ Buka semua pasaran</button><button type="button" data-wbf="shut">⏫ Tutup semua pasaran</button><button type="button" data-wbf="pickall">☑ Pilih semua aktif</button><button type="button" data-wbf="clear">Kosongkan centang</button>';
+      var anc=C.anchor();if(anc&&anc.parentNode)anc.parentNode.insertBefore(bar,anc);
+    }else if(!hs.length&&bar){bar.remove();}
+    if(obs)obs.takeRecords();
+  }
+  function later(){clearTimeout(timer);timer=setTimeout(apply,60);}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var b=t.closest('[data-wbf]');
+    if(b){
+      var w=b.getAttribute('data-wbf');e.stopPropagation();
+      if(w==='pick'){var h=b.closest(C.hdr);if(h){if(C.pickGroup)C.pickGroup(h,sibs(h));else setChk(pickIds(h),true);}}
+      else if(w==='open'){COL.clear();save();apply();}
+      else if(w==='shut'){hdrs().forEach(function(h){COL.add(key(h));});save();apply();}
+      else if(w==='pickall'){if(C.pickAll)C.pickAll();else hdrs().forEach(function(h){setChk(pickIds(h),true);});}
+      else if(w==='clear'){if(C.clearAll)C.clearAll();else hdrs().forEach(function(h){setChk(sibs(h),false);});}
+      return;
+    }
+    if(t.closest('button,a,input,select,textarea,label'))return;
+    var h2=t.closest(C.hdr);if(!h2)return;
+    var k=key(h2);if(COL.has(k))COL.delete(k);else COL.add(k);save();apply();
+  },true);
+  obs=new MutationObserver(later);obs.observe(document.body,{childList:true,subtree:true});
+  later();
+})({id:'scan4',hdr:'.bank-group-hdr',name:'.bank-group-name',chk:'input[type=checkbox]',patah:function(el){return el.classList.contains('patah');},anchor:function(){return document.querySelector('.bank-group-hdr');}});
+</script>
+
 </body>
 </html>

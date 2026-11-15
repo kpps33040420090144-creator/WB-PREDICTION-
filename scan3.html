@@ -2046,7 +2046,7 @@ function copyResultByGIdx(idx){
   const name=mkt?mkt.name:r.wbId;
   const _jlbl={ai_ke:'AI KE',ai_ac:'AI AC',ai_ck:'AI CK',bbfs_ke:'BBFS KE',bbfs_ac:'BBFS AC',bbfs_ck:'BBFS CK',bbfs_4d:'BBFS 4D',pos_e:'Pos Ek',pos_k:'Pos Kp',pos_a:'Pos As',pos_c:'Pos Cp',off_ke:'Off KE',off_ac:'Off AC',off_ck:'Off CK',off_4d:'Off 4D'};
   const text=`${name} | ${r.formula} | ${_jlbl[r.jenis]||(r.jenis||'AI').toUpperCase()} | PRED: ${r.predNow} | ${r.hitPct}% HIT`;
-  navigator.clipboard.writeText(withLink(text)).then(()=>toast('✅ Kunci di-copy!'));
+  navigator.clipboard.writeText(text).then(()=>toast('✅ Kunci di-copy!'));
 }
 
 function showTrekResult(rJson){
@@ -2116,7 +2116,7 @@ function saveTrekFromModal(){
   saveToBankObj(trekModalData);
 }
 
-const COPY_LINK='https://angkahoky187-crypto.github.io/MASTER';
+const COPY_LINK='https://angkahoky187-crypto.github.io/MASTER/';
 function withLink(t){t=String(t==null?'':t);return t.includes(COPY_LINK)?t:t.replace(/\s+$/,'')+'\n\n'+COPY_LINK;}
 function copyTrekFromModal(){
   if(!trekModalData)return;
@@ -2130,7 +2130,7 @@ function copyTrekFromModal(){
     if(row.isNext){
       lines.push(`${String(row.period).padStart(4,'0')} : ${row.pred} ??`);
     }else{
-      lines.push(`${String(row.period).padStart(4,'0')} : ${row.pred} ${row.hit?mLabel:'✗'}`);
+      lines.push(`${String(row.period).padStart(4,'0')} : ${row.pred}${row.hit?'':' ✗'}`);
     }
   }
   lines.push(``);
@@ -2554,7 +2554,7 @@ function copyMnResult(){
   const mkt=MARKETS.find(m=>m.id===c.wbId);
   const name=mkt?mkt.name:c.wbId;
   const text=`${name} | ${c.formula} | ${c.jenis.toUpperCase()} | PRED: ${c.predNow} | ${c.hitPct}% HIT`;
-  navigator.clipboard.writeText(withLink(text)).then(()=>toast('✅ Copied!'));
+  navigator.clipboard.writeText(text).then(()=>toast('✅ Copied!'));
 }
 
 function copyMnKey(codeKey){
@@ -2577,7 +2577,7 @@ function copyMnTrek(){
     if(row.hit===null){
       lines.push(`${String(row.period).padStart(4,'0')} : ${row.predStr} ??`);
     }else{
-      lines.push(`${String(row.period).padStart(4,'0')} : ${row.predStr} ${row.hit?mLabel:'✗'}`);
+      lines.push(`${String(row.period).padStart(4,'0')} : ${row.predStr}${row.hit?'':' ✗'}`);
     }
   }
   lines.push(``);
@@ -2595,7 +2595,7 @@ function copyResult(cJson){
   const mkt=MARKETS.find(m=>m.id===c.wbId);
   const name=mkt?mkt.name:c.wbId;
   const text=`${name} | ${c.formula} | ${c.jenis.toUpperCase()} | PRED: ${c.predNow} | ${c.hitPct}% HIT`;
-  navigator.clipboard.writeText(withLink(text)).then(()=>toast('✅ Copied!'));
+  navigator.clipboard.writeText(text).then(()=>toast('✅ Copied!'));
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -2901,17 +2901,19 @@ function renderBank(){
   if(tbody)tbody.innerHTML=order.map(key=>{
     const m=mMap[key]||{};
     const groupLabel=m.name?((m.flag||'🌐')+' '+m.name):String(key).toUpperCase();
-    const items=groups[key];
+    const items=groups[key].slice().sort((a,b)=>String(bankJenisShort(a.jenis||'')).localeCompare(String(bankJenisShort(b.jenis||''))));
     const headerRow=`<tr class="bank-group-row"><td colspan="6"><div class="bank-group-hdr"><span class="bank-group-name">${groupLabel}</span><span class="bank-group-count">${items.length} rumus</span><span style="display:flex;gap:5px"><button class="bact" style="padding:2px 8px;font-size:10px" onclick="rkOpen('${String(key).replace(/[^\w-]/g,'')}')">🧮 Rekap</button><button class="bact" style="padding:2px 8px;font-size:10px" onclick="bankGabungMkt('${String(key).replace(/[^\w-]/g,'')}')">🔗 Gabung Trek</button></span></div>${bankMktInfoHtml(key)}</td></tr>`;
+    let _lastJ=null;
     const rows=items.map(item=>{
       const shortName=((m.name||item.wbId).split(' ')[0]).substring(0,4).toUpperCase();
       const jenisLabel=bankJenisShort(item.jenis||'');
+      const _subH=(jenisLabel!==_lastJ)?(_lastJ=jenisLabel,`<tr class="wbf-subrow"><td colspan="6"><div class="wbf-sub">${jenisLabel} · ${items.filter(x=>bankJenisShort(x.jenis||'')===jenisLabel).length} trek</div></td></tr>`):'';
       const predNow=item.predNow||'--';
       const st=bankRowStatus(item);
       const statusBadge=st.lastHit===null?'':
         st.lastHit?'<span class="badge-hit" title="Hasil terakhir HIT">✓</span>':
         `<span class="badge-patah" title="Sedang patah beruntun ${st.streak}x">✗${st.streak>1?' '+st.streak+'x':''}</span>`;
-      return `<tr class="bank-row" data-id="${item.id}">
+      return _subH+`<tr class="bank-row" data-id="${item.id}">
         <td class="bank-chk" style="text-align:center"><input type="checkbox" class="rchk" data-id="${String(item.id)}" onchange="bankOnChk()"></td>
         <td class="bank-tipe">
           <div class="pas">${shortName}</div>
@@ -3021,7 +3023,7 @@ function bankBuildTrekFull(item,includeHeader){
 
   const copyLines=rowsDisplay.map(row=>{
     if(row.isNext)return `${String(row.r).padStart(4,'0')} : ${row.pred} ?`;
-    return `${String(row.r).padStart(4,'0')} : ${row.pred} ${rowLabel}`;
+    return `${String(row.r).padStart(4,'0')} : ${row.pred}${row.hit?'':' ✗'}`;
   });
 
   const headerLine=includeHeader?`${pasaranName}\n`:'';
@@ -3351,7 +3353,7 @@ function bankShowTrek(item){
 
   const copyLines=rowsDisplay.map(row=>{
     if(row.isNext)return `${String(row.r).padStart(4,'0')} : ${row.pred} ?`;
-    return `${String(row.r).padStart(4,'0')} : ${row.pred} ${rowLabel}`;
+    return `${String(row.r).padStart(4,'0')} : ${row.pred}${row.hit?'':' ✗'}`;
   });
   const copyText=
     `${pasaranName}\n`+
@@ -3565,7 +3567,7 @@ function bankShowGabunganTrek(items){
     const rStr=String(row.r).padStart(4,'0');
     const predsStr=row.preds.join(' vs ');
     if(row.isNext)return `${rStr} : ${predsStr} ?`;
-    return `${rStr} : ${predsStr} ${rowLabelText}`;
+    return `${rStr} : ${predsStr}${row.anyHit?'':' ✗'}`;
   });
   window._lastGabunganCopyText=
     codesText+'\n'+
@@ -4027,5 +4029,111 @@ window.__rkAdapter={
  flag:function(k){var m=(typeof MARKETS!=='undefined'?MARKETS:[]).find(function(x){return x.id===k});return m&&m.flag?m.flag:'🌐'}
 };
 </script>
+
+<script id="wbfold">
+/* Kelompok & lipat per pasaran di Bank (sama seperti Bank Prediksi): ketuk judul pasaran = buka/tutup,
+   tombol "Pilih aktif" per pasaran, Buka/Tutup semua. Tidak mengubah data bank. */
+(function(C){
+  var COL=new Set(),SKEY='wbf_col_'+C.id,obs=null,timer=null;
+  try{JSON.parse(localStorage.getItem(SKEY)||'[]').forEach(function(k){COL.add(k);});}catch(e){}
+  var st=document.createElement('style');
+  st.textContent='.wbf-hide{display:none!important}.wbf-h{cursor:pointer}.wbf-arr{margin-right:6px;color:#ffc933;font-weight:800}'+
+   '.wbf-sub{margin:10px 0 2px;padding:5px 10px;border-radius:6px;background:#1c2a44;color:#ffc933;font-weight:800;font-size:12px}'+
+   'tr.wbf-subrow>td{padding:6px 8px}.wbf-pick{margin-left:6px;padding:3px 8px;border-radius:6px;border:1px solid #2a3b5e;background:#111a2e;color:#e6ecff;font-size:10px;font-weight:700;cursor:pointer}'+
+   '#wbfBar{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}#wbfBar button{flex:1 1 auto;padding:7px 8px;border-radius:8px;border:1px solid #2a3b5e;background:#111a2e;color:#e6ecff;font-size:11px;font-weight:700;cursor:pointer}';
+  document.head.appendChild(st);
+  function hdrs(){return [].slice.call(document.querySelectorAll(C.hdr));}
+  function key(h){var n=C.name?h.querySelector(C.name):null;return ((n||h).textContent||'').replace(/\s+/g,' ').trim().slice(0,60);}
+  function sibs(h){var a=[],n=h.nextElementSibling;while(n&&!n.matches(C.hdr)&&!(C.stop&&n.matches(C.stop))){a.push(n);n=n.nextElementSibling;}return a;}
+  function save(){try{localStorage.setItem(SKEY,JSON.stringify([].slice.call(COL)));}catch(e){}}
+  function pickIds(h){return sibs(h).filter(function(el){return !C.patah(el)&&el.querySelector(C.chk);});}
+  function setChk(els,on){els.forEach(function(el){var c=el.querySelector(C.chk);if(c&&c.checked!==on)c.click();});}
+  function apply(){
+    var hs=hdrs();
+    hs.forEach(function(h){
+      var k=key(h),c=COL.has(k);
+      if(!h.classList.contains('wbf-h')){
+        h.classList.add('wbf-h');
+        var a=document.createElement('span');a.className='wbf-arr';h.insertBefore(a,h.firstChild);
+        var b=document.createElement('button');b.type='button';b.className='wbf-pick';b.textContent='☑ Pilih aktif';b.setAttribute('data-wbf','pick');h.appendChild(b);
+      }
+      var arr=h.querySelector('.wbf-arr');if(arr)arr.textContent=c?'▸':'▾';
+      sibs(h).forEach(function(s){s.classList.toggle('wbf-hide',c);});
+    });
+    var bar=document.getElementById('wbfBar');
+    if(hs.length&&!bar){
+      bar=document.createElement('div');bar.id='wbfBar';
+      bar.innerHTML='<button type="button" data-wbf="open">⏬ Buka semua pasaran</button><button type="button" data-wbf="shut">⏫ Tutup semua pasaran</button><button type="button" data-wbf="pickall">☑ Pilih semua aktif</button><button type="button" data-wbf="clear">Kosongkan centang</button>';
+      var anc=C.anchor();if(anc&&anc.parentNode)anc.parentNode.insertBefore(bar,anc);
+    }else if(!hs.length&&bar){bar.remove();}
+    if(obs)obs.takeRecords();
+  }
+  function later(){clearTimeout(timer);timer=setTimeout(apply,60);}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var b=t.closest('[data-wbf]');
+    if(b){
+      var w=b.getAttribute('data-wbf');e.stopPropagation();
+      if(w==='pick'){var h=b.closest(C.hdr);if(h){if(C.pickGroup)C.pickGroup(h,sibs(h));else setChk(pickIds(h),true);}}
+      else if(w==='open'){COL.clear();save();apply();}
+      else if(w==='shut'){hdrs().forEach(function(h){COL.add(key(h));});save();apply();}
+      else if(w==='pickall'){if(C.pickAll)C.pickAll();else hdrs().forEach(function(h){setChk(pickIds(h),true);});}
+      else if(w==='clear'){if(C.clearAll)C.clearAll();else hdrs().forEach(function(h){setChk(sibs(h),false);});}
+      return;
+    }
+    if(t.closest('button,a,input,select,textarea,label'))return;
+    var h2=t.closest(C.hdr);if(!h2)return;
+    var k=key(h2);if(COL.has(k))COL.delete(k);else COL.add(k);save();apply();
+  },true);
+  obs=new MutationObserver(later);obs.observe(document.body,{childList:true,subtree:true});
+  later();
+})({id:'scan3',hdr:'tr.bank-group-row',name:'.bank-group-name',chk:'input.rchk',patah:function(el){return !!el.querySelector('.badge-patah');},anchor:function(){var t=document.getElementById('bank-tbody');return t?(t.closest('table')||t):null;}});
+</script>
+
+
+<script id="wbres">
+/* Alat hasil pencarian trek (acuan: Rumus Harian): Pilih N teratas, Simpan dicentang ke Bank, Salin dicentang (+link). */
+(function(C){
+  var LINK='https://angkahoky187-crypto.github.io/MASTER/',obs=null,timer=null;
+  var st=document.createElement('style');
+  st.textContent='#wbrBar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0}#wbrBar button,#wbrBar input{padding:7px 8px;border-radius:8px;border:1px solid #2a3b5e;background:#111a2e;color:#e6ecff;font-size:11px;font-weight:700}#wbrBar input{width:52px;text-align:center}#wbrBar button{cursor:pointer;flex:1 1 auto}#wbrBar span{font-size:11px;color:#9aa3c7;flex:1 0 100%}.wbr-chk{width:18px;height:18px;accent-color:#ffc933;flex:none;margin:0 6px 0 0;vertical-align:middle}';
+  document.head.appendChild(st);
+  function cards(){return [].slice.call(document.querySelectorAll(C.card));}
+  function chkOf(c){return c.querySelector(C.chk);}
+  function ensure(){cards().forEach(function(c){if(chkOf(c)||!C.host)return;var i=document.createElement('input');i.type='checkbox';i.className='wbr-chk';i.addEventListener('click',function(e){e.stopPropagation();upd();});var h=C.host(c)||c;h.insertBefore(i,h.firstChild);});}
+  function checked(){return cards().filter(function(c){var k=chkOf(c);return k&&k.checked;});}
+  function upd(){var s=document.getElementById('wbrInfo');if(s)s.textContent=checked().length+' dicentang dari '+cards().length+' hasil';}
+  function apply(){
+    ensure();
+    var cs=cards(),bar=document.getElementById('wbrBar');
+    if(cs.length&&!bar){
+      bar=document.createElement('div');bar.id='wbrBar';
+      bar.innerHTML='<input type="number" id="wbrN" min="1" max="99" value="5"><button type="button" data-wbr="top">☑ Pilih N teratas</button><button type="button" data-wbr="save">💾 Simpan dicentang ke Bank</button><button type="button" data-wbr="copy">📋 Salin dicentang (+link)</button><button type="button" data-wbr="clear">Kosongkan</button><span id="wbrInfo"></span>';
+      var a=C.anchor();if(a&&a.parentNode)a.parentNode.insertBefore(bar,a);
+    }else if(!cs.length&&bar){bar.remove();}
+    upd();if(obs)obs.takeRecords();
+  }
+  function later(){clearTimeout(timer);timer=setTimeout(apply,80);}
+  document.addEventListener('click',function(e){
+    var b=e.target&&e.target.closest?e.target.closest('[data-wbr]'):null;if(!b)return;
+    var w=b.getAttribute('data-wbr'),cs=cards();
+    if(w==='top'){var n=Math.max(1,parseInt((document.getElementById('wbrN')||{}).value,10)||5);cs.forEach(function(c,i){var k=chkOf(c);if(k)k.checked=i<n;});}
+    else if(w==='clear'){cs.forEach(function(c){var k=chkOf(c);if(k)k.checked=false;});}
+    else if(w==='save'){var ids=checked().map(C.idxOf).filter(function(i){return i>=0;});if(!ids.length){C.toast('Centang dulu hasil yang mau disimpan');return;}var n2=C.save(ids);C.toast('💾 '+n2+' trek disimpan ke Bank'+(ids.length-n2>0?' · '+(ids.length-n2)+' dilewati (sudah ada/penuh)':''));}
+    else if(w==='copy'){var its=checked().map(function(c){return C.itemOf(C.idxOf(c));}).filter(Boolean);if(!its.length){C.toast('Centang dulu hasil yang mau disalin');return;}
+      var L=['⭐ WONGBAGUS PREDICTION — HASIL SCAN',''];its.forEach(function(it){L.push(C.mkt(it)+' · '+C.key(it)+' : '+C.pred(it)+' · '+C.meta(it));});L.push('',LINK);
+      var t=L.join('\n');(navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(t):Promise.reject()).then(function(){C.toast('📋 '+its.length+' hasil disalin');},function(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');C.toast('📋 '+its.length+' hasil disalin');}catch(_){C.toast('Gagal menyalin');}ta.remove();});}
+    upd();
+  });
+  obs=new MutationObserver(later);obs.observe(document.body,{childList:true,subtree:true});later();
+})({card:'#sc-results .result-card',chk:'.wbr-chk',host:function(c){return c;},anchor:function(){return document.getElementById('sc-results');},
+ idxOf:function(c){var m=/saveToBankByGIdx\((\d+)\)/.exec(c.innerHTML);return m?+m[1]:-1;},
+ itemOf:function(i){return window._renderResultsFlat&&window._renderResultsFlat[i];},
+ pred:function(it){return it.predNow;},key:function(it){return it.formula;},meta:function(it){return it.hitPct+'% HIT · patah maks '+it.maxP;},
+ mkt:function(it){var m=MARKETS.find(function(x){return x.id===it.wbId;});return m?m.name:it.wbId;},
+ save:function(ids){var id=getActiveBankId(),n0=(getBankData(id)||[]).length,old=window.toast;window.toast=function(){};try{ids.forEach(function(i){saveToBankByGIdx(i);});}finally{window.toast=old;}return (getBankData(id)||[]).length-n0;},
+ toast:function(m){toast(m);}});
+</script>
+
 </body>
 </html>
