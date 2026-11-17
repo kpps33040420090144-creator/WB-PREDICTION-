@@ -1262,8 +1262,10 @@ function copyTrek(r){
 // ═══════════════════════════════════════════════════════════
 function saveBank(){try{WB_BANK.setSync(bank,'scan5');}catch{}}
 // ── batas rumus bank per member (diatur admin) ──
-function bankLimitVal(){try{return WB_BANK.limit();}catch(e){return 0;}}
-function bankRoom(n){try{return WB_BANK.room('scan5',n);}catch(e){return n;}}
+function wbIsAdminNow(){try{if(window.WB_IS_ADMIN===true)return true;const L=location,o=JSON.parse(localStorage.getItem('wb_logged_member__'+L.hostname+'/'+((L.pathname||'').split('/')[1]||''))||'null');return !!(o&&(o.isAdmin||o.id==='ADMIN'));}catch(e){return false;}}   // admin selalu tanpa batas bank
+function wbMemLim(k){try{const L=location,o=JSON.parse(localStorage.getItem('wb_logged_member__'+L.hostname+'/'+((L.pathname||'').split('/')[1]||''))||'null');if(!o||o.isAdmin||o.id==='ADMIN')return 0;const n=parseInt(o[k],10);return n>0?n:0;}catch(e){return 0;}}   // batas per bank dari admin (Kunci per member)
+function bankLimitVal(){try{const p=wbMemLim('scan5BankLimit');if(p>0)return p;return wbIsAdminNow()?0:WB_BANK.limit();}catch(e){return 0;}}
+function bankRoom(n){try{const p=wbMemLim('scan5BankLimit');if(p>0)return Math.max(0,Math.min(n,p-bank.length));return wbIsAdminNow()?n:WB_BANK.room('scan5',n);}catch(e){return n;}}
 function bankFullMsg(){toast('⚠️ Bank penuh (maks '+bankLimitVal()+' rumus di Scan 5). Hapus rumus lama dulu.',2500,'var(--red)');}
 function updateResBar(){
   document.getElementById('rcnt').innerHTML=`<b>${scanResults.length}</b> trek · ${scanMode}`;

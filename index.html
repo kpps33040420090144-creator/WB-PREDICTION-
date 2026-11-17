@@ -256,6 +256,7 @@ input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--bo
       <label style="display:block;font-size:11px;color:var(--muted);margin:4px 0 3px">🔮 Prediksi Otomatis: batas simpan trek ke Bank</label>
       <input type="number" id="acc-predbank" min="1" max="300" inputmode="numeric" placeholder="20" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:7px;padding:9px;color:var(--text);font-size:13px;margin-bottom:3px">
       <div style="font-size:10px;color:var(--muted);margin-bottom:10px">Jumlah trek yang bisa disimpan dari Prediksi Otomatis ke Bank (bank.html). Terpisah dari batas Scan 1–5. Kosongkan = bawaan 20.</div>
+      <details id="acc-lim-box" style="margin:4px 0 12px;border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:rgba(255,255,255,.03)"><summary style="cursor:pointer;font-size:12px;font-weight:800;color:#fbbf24">🔒 Batas per bank / fitur (kunci per member)</summary><div style="font-size:10px;color:var(--muted);margin:6px 0 4px">Kosongkan = ikut bawaan. Admin tanpa batas. Batas per bank mengalahkan "Batas rumus di Bank (per scan)" di atas.</div><div id="acc-limits"></div></details>
       <label style="display:flex;gap:8px;align-items:center;font-size:12px;margin-bottom:10px"><input type="checkbox" id="acc-wa" checked style="width:auto"> 📲 Kirim info akun lewat WhatsApp setelah simpan</label>
       <button id="acc-save" onclick="wbAccSave()" style="width:100%;padding:11px;border-radius:10px;border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.15);color:#10b981;font-size:13px;font-weight:800;cursor:pointer">💾 Simpan</button>
     </div>
@@ -1048,6 +1049,8 @@ async function wbOpenAcc(id, mode){
   document.getElementById('acc-banklimit').value = u.bankLimit || '';
   document.getElementById('acc-predmk').value = u.predMktLimit || '';
   document.getElementById('acc-predbank').value = u.predBankLimit || '';
+  wbFillLimitUI(u);
+  { const lb=document.getElementById('acc-lim-box'); if(lb) lb.open = WB_LIM_FIELDS.some(f=>u[f.k]); }
   document.getElementById('acc-save').textContent = isAcc ? '✅ ACC & Kirim WA' : '💾 Simpan';
   document.getElementById('wb-acc-overlay').style.display = 'block';
 }
@@ -1059,6 +1062,31 @@ function wbAccPlanChange(){
   else if(_wbAcc.baseExp) document.getElementById('acc-exp').value = _wbAcc.baseExp;
 }
 function wbAccAddDays(n){ const inp = document.getElementById('acc-exp'); inp.value = wbAddDays(inp.value || '', n); }
+/* ---- batas per bank / fitur per member (kunci) ---- */
+const WB_LIM_GROUPS=[
+  {g:'🔎 SCAN 1–5 — simpan Bank per scan',items:[1,2,3,4,5].map(n=>({k:'scan'+n+'BankLimit',l:'Save bank Scan '+n+' — maks rumus tersimpan',min:1,max:300,ph:'ikut batas umum'}))},
+  {g:'🔮 PREDIKSI OTOMATIS',items:[{k:'predStopLimit',l:'Stop scan — maks rumus hasil scan',min:1,max:1000,ph:'bawaan = batas bank'}]},
+  {g:'📅 SCAN HARIAN',items:[{k:'harianMktLimit',l:'Pasaran maks (1-64)',min:1,max:64,ph:'kosong = semua'},{k:'harianBankLimit',l:'Save bank — maks rumus tersimpan',min:1,max:300,ph:'bawaan 20'}]},
+  {g:'📆 RUMUS HARIAN (rumus.html)',items:[{k:'rumusBankLimit',l:'Save bank — maks rumus tersimpan',min:1,max:300,ph:'bawaan 20'}]},
+  {g:'🤖 SCAN OTOMATIS',items:[{k:'otoMktLimit',l:'Pasaran maks (1-64)',min:1,max:64,ph:'kosong = bawaan'},{k:'otoStopLimit',l:'Stop scan — maks rumus hasil scan',min:1,max:1000,ph:'bawaan 30'},{k:'otoBankLimit',l:'Save bank — maks rumus tersimpan',min:1,max:300,ph:'bawaan 20'}]},
+  {g:'🐉 SCAN SHIO & JALUR',items:[{k:'shioBankLimit',l:'Save bank shio — maks rumus tersimpan',min:1,max:300,ph:'bawaan 20'}]}
+];
+const WB_LIM_FIELDS=WB_LIM_GROUPS.reduce((a,g)=>a.concat(g.items),[]);
+function wbBuildLimitUI(){
+  const box=document.getElementById('acc-limits');if(!box||box.dataset.built)return;box.dataset.built='1';
+  const st='width:100%;box-sizing:border-box;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:7px;padding:9px;color:var(--text);font-size:13px;margin-bottom:8px';
+  box.innerHTML=WB_LIM_GROUPS.map(g=>`<div style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px"><div style="font-size:12px;font-weight:800;color:#fbbf24;margin-bottom:6px">${g.g}</div>`+
+    g.items.map(f=>`<label style="display:block;font-size:11px;color:var(--muted);margin:2px 0 3px">${f.l}</label><input type="number" id="acc-lim-${f.k}" min="${f.min}" max="${f.max}" inputmode="numeric" placeholder="${f.ph}" style="${st}">`).join('')+`</div>`).join('');
+}
+function wbFillLimitUI(u){wbBuildLimitUI();WB_LIM_FIELDS.forEach(f=>{const el=document.getElementById('acc-lim-'+f.k);if(el)el.value=u[f.k]||'';});}
+function wbCollectLimits(){   // -> {vals:{k:number|null}} atau {err}
+  const vals={};
+  for(const f of WB_LIM_FIELDS){const el=document.getElementById('acc-lim-'+f.k);const raw=el?el.value.trim():'';
+    if(raw===''){vals[f.k]=null;continue;}
+    const n=parseInt(raw,10);if(!(n>=f.min&&n<=f.max))return {err:f.l+' harus angka '+f.min+'–'+f.max+', atau kosongkan.'};
+    vals[f.k]=n;}
+  return {vals};
+}
 async function wbAccSave(){
   const pw = document.getElementById('acc-pass').value.trim();
   const plan = document.getElementById('acc-plan').value;
@@ -1073,6 +1101,7 @@ async function wbAccSave(){
   const pbRaw = document.getElementById('acc-predbank').value.trim();
   let pb = null;
   if(pbRaw !== ''){ pb = parseInt(pbRaw, 10); if(!(pb >= 1 && pb <= 300)){ alert('Batas simpan trek Prediksi Otomatis harus angka 1–300, atau kosongkan (= 20).'); return; } }
+  const limRes = wbCollectLimits(); if(limRes.err){ alert(limRes.err); return; }
   if(pw.length < 4){ alert('Password minimal 4 karakter.'); return; }
   if(!/^\d{4}-\d{2}-\d{2}$/.test(exp)){ alert('Masa aktif harus berupa tanggal (pilih lewat kalender).'); return; }
   const btn = document.getElementById('acc-save'); const btnTxt = btn.textContent;
@@ -1088,6 +1117,7 @@ async function wbAccSave(){
       if(bl === null) delete after.bankLimit; else after.bankLimit = bl;
       if(pm === null) delete after.predMktLimit; else after.predMktLimit = pm;
       if(pb === null) delete after.predBankLimit; else after.predBankLimit = pb;
+      WB_LIM_FIELDS.forEach(f=>{ const v=limRes.vals[f.k]; if(v === null) delete after[f.k]; else after[f.k] = v; });
       list[i] = after;
       return list;
     });
@@ -1099,6 +1129,7 @@ async function wbAccSave(){
     if((before.bankLimit||null) !== bl) ch.push('batas bank '+(before.bankLimit||'bawaan')+' → '+(bl||'bawaan'));
     if((before.predMktLimit||null) !== pm) ch.push('batas pasaran prediksi '+(before.predMktLimit||'bawaan')+' → '+(pm||'bawaan'));
     if((before.predBankLimit||null) !== pb) ch.push('batas bank prediksi '+(before.predBankLimit||'bawaan')+' → '+(pb||'bawaan'));
+    WB_LIM_FIELDS.forEach(f=>{ const b0=before[f.k]||null, a0=limRes.vals[f.k]; if(b0 !== a0) ch.push(f.k+' '+(b0||'bawaan')+' → '+(a0||'bawaan')); });
     await jAddAdminLog(after.id, after.name, isAcc?'Activated':'EditAccount', 'Admin: '+(ch.join(', ')||'tanpa perubahan'));
     WB_ALL_USERS = wbRealMembers(all);
     wbRenderStats(); wbRenderTable();
@@ -1840,7 +1871,8 @@ function wbBVSlots(apps){const g=wbBVGroups(apps),by={};g.forEach(x=>by[x.app]=x
   const out=WB_BV_ORDER.map(k=>by[k]||{app:k,subs:[],items:[],count:0});g.forEach(x=>{if(!WB_BV_ORDER.includes(x.app))out.push(x);});return out;}
 function wbBVCounts(x){const ns=(x.items||[]).map(wbXNorm),hit=ns.filter(n=>n.kind==='hit').length,patah=ns.filter(n=>n.kind==='patah').length;return{hit,patah,pend:ns.length-hit-patah};}
 function wbBVGet(mid,app){const d=(_wbBVCache||[]).find(x=>x.mid===mid);return d?wbBVGroups(d.apps).find(a=>a.app===app):null;}
-function wbBVLimit(u,app){const n=parseInt(app==='prediksi'?u.predBankLimit:u.bankLimit,10);return n>0?n:20;}
+const WB_BV_LIMKEY={prediksi:'predBankLimit',harian:'harianBankLimit',otomatis:'otoBankLimit',shio:'shioBankLimit',rumus:'rumusBankLimit',scan1:'scan1BankLimit',scan2:'scan2BankLimit',scan3:'scan3BankLimit',scan4:'scan4BankLimit',scan5:'scan5BankLimit'};
+function wbBVLimit(u,app){const k=WB_BV_LIMKEY[String(app||'').split('_')[0]];let n=parseInt(k?u[k]:NaN,10);if(!(n>0))n=parseInt(app==='prediksi'?(u.predBankLimit||u.bankLimit):u.bankLimit,10);return n>0?n:20;}
 function wbBVKey(it){return String(wbXNorm(it).key||'-');}
 function wbBVCopyText(items){const g={};items.forEach(it=>{const mk=wbBVMarketName(it);(g[mk]=g[mk]||[]).push(wbBVKey(it));});
   return Object.keys(g).map(mk=>mk+'\n'+g[mk].join('\n')).join('\n\n');}

@@ -85,6 +85,12 @@ h2{color:#fff}
 #rkRoot .rsz b{font-size:18px;line-height:1;letter-spacing:2px}
 #rkRoot #msg{font-size:13px;margin:6px 0;color:#3ddc6b}
 #rkRoot .rkchk{display:flex;gap:8px;align-items:center;margin:8px 0 0;color:var(--fg);font-size:13px}
+#rkRoot .r4box{border:1px solid var(--bd);border-radius:10px;margin:8px 0;overflow:hidden}
+#rkRoot .r4box .ph{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;background:rgba(0,0,0,.4);font-weight:700;color:var(--ac)}
+#rkRoot .r4box .r4row{display:flex;gap:6px;align-items:center;padding:8px 8px 0}
+#rkRoot .r4box .r4row b{flex:0 0 auto;font-size:13px}
+#rkRoot .r4box textarea{border:0;border-radius:0;border-top:1px solid var(--bd);margin-top:8px}
+#rkRoot .r4box .hint{padding:0 8px 6px}
 </style>
 </head>
 <body>
@@ -262,6 +268,20 @@ h2{color:#fff}
   <div id="admSend" style="display:none"><div class="rkr"><input id="pasaran" placeholder="Pasaran untuk Blog, mis. Hongkong Pools"></div>
   <div class="rkrow"><button class="pri" id="toBlog">📤 Kirim ke Blog</button></div></div>
   <div id="groups"></div>
+</div>
+
+<div class="card k5" id="r4Card">
+  <h2>🎯 Rekap 4D · 3D otomatis dari 2D Depan · Tengah · Belakang</h2>
+  <div class="hint">Jalankan Rekap 2D di tiap Kelompok (<b>AC = Depan</b>, <b>CK = Tengah</b>, <b>KE = Belakang</b>) — hasil semua Patah tersimpan otomatis. Lalu isi <b>Patah</b> tiap posisi di bawah (mis. <b>6</b> atau <b>1-13</b>; kosong = Angka Jadi = patah terkecil). Kolom LN terisi sendiri, 4D dan 3D tersusun otomatis.</div>
+  <div class="rkr"><b style="flex:0 0 auto">Rekap 2D masuk ke</b><select id="r4Tgt"><option value="">ikut Kelompok (AC/CK/KE)</option><option value="Depan">Depan</option><option value="Tengah">Tengah</option><option value="Belakang">Belakang</option></select></div>
+  <div id="r4Pos"></div>
+  <div class="r4box"><div class="ph"><span>AI / CT / CB 4D · <span id="r4nAI">0</span> baris</span></div><div class="hint" style="padding-top:6px">Satu baris = satu kumpulan digit (mis. 1235). Angka 4D hanya lolos jika memuat salah satu digit di tiap baris. AI, CT, dan CB diperlakukan sama.</div><textarea id="r4ai" rows="2" data-r4x="1" placeholder="AI/CT/CB 4D — satu baris satu kumpulan digit"></textarea></div>
+  <div class="r4box"><div class="ph"><span>4D OFF (mati total) · <span id="r4nOF">0</span> angka</span></div><div class="hint" style="padding-top:6px">Angka 4D di sini dibuang total dari hasil.</div><textarea id="r4off" rows="2" data-r4x="1" placeholder="4D OFF — pisah * , # . atau spasi"></textarea></div>
+  <div id="r4Info" class="hint" style="margin:6px 0"></div>
+  <div class="r4box"><div class="ph"><span>Hasil 4D (ab∈Depan · bc∈Tengah · cd∈Belakang) · <span id="r4nO">0</span> angka</span></div><textarea id="r4out" rows="3" readonly placeholder="Hasil 4D tampil di sini"></textarea></div>
+  <div class="rkrow"><button class="pri" id="r4Copy">Salin 4D</button><button id="r4Use">Pakai di tab 4D</button></div>
+  <div class="r4box"><div class="ph"><span>Hasil 3D (bc∈Tengah · cd∈Belakang) · <span id="r4n3">0</span> angka</span></div><textarea id="r4out3" rows="3" readonly placeholder="Hasil 3D tampil di sini"></textarea></div>
+  <div class="rkrow"><button class="pri" id="r4Copy3">Salin 3D</button><button id="r4Use3">Pakai di tab 3D</button><button class="red" id="r4Reset">Kosongkan semua</button></div>
 </div>
 
 <div class="card k4" id="gridCard">
@@ -1096,7 +1116,9 @@ function shEval(it){
 }
 const shKey=it=>[it.mkt,it.vk,rhKeyName(it.spec,false),baseCode(it.base),it.day||0,it.L,it.P].join('|');
 /* batas rumus di Bank per member (diatur admin; sama seperti Scan 1-5). 0 / admin = tanpa batas */
-function shbLimit(){try{const n=+WB_BANK.limit();return n>0?n:0;}catch(e){return 0;}}
+function wbIsAdminNow(){try{if(window.WB_IS_ADMIN===true)return true;const L=location,o=JSON.parse(localStorage.getItem('wb_logged_member__'+L.hostname+'/'+((L.pathname||'').split('/')[1]||''))||'null');return !!(o&&(o.isAdmin||o.id==='ADMIN'));}catch(e){return false;}}   // admin selalu tanpa batas bank
+function wbMemLim(k){try{const L=location,o=JSON.parse(localStorage.getItem('wb_logged_member__'+L.hostname+'/'+((L.pathname||'').split('/')[1]||''))||'null');if(!o||o.isAdmin||o.id==='ADMIN')return 0;const n=parseInt(o[k],10);return n>0?n:0;}catch(e){return 0;}}   // batas per bank dari admin (Kunci per member)
+function shbLimit(){try{const p=wbMemLim('rumusBankLimit');if(p>0)return p;if(wbIsAdminNow())return 0;const n=+WB_BANK.limit();return n>0?n:0;}catch(e){return 0;}}
 function shbRoom(){const l=shbLimit();return l>0?Math.max(0,l-shbGet().length):Infinity;}
 function shbFullMsg(){return '⚠️ Bank penuh (maks '+shbLimit()+' rumus). Hapus rumus lama dulu.';}
 let shbCutIdx=[];   // urutan (di list terakhir) yang tidak muat karena bank penuh
@@ -1684,6 +1706,7 @@ function showRes(list,tot,votes){
   if(more)h+=`<div class="hint">${more} LN dengan patah lebih dari 40 tidak ditampilkan.</div>`;
   $('groups').innerHTML=h;
   $('groups').querySelectorAll('textarea.pt').forEach(addGrip);
+  if(N===2&&typeof r4feed==='function'){try{r4feed(by);}catch(_){}}
   return keys.length?keys[0]:null;
 }
 function addGrip(ta){
@@ -1755,6 +1778,99 @@ $('use').onclick=()=>{
   const t=toks($('out').value,N);if(!t.length){flash($('use'),'Belum ada hasil','Jadikan LN dasar');return;}
   $('dasar').value=t.join('*');drawGrid(null);flash($('use'),'Dipakai ✓','Jadikan LN dasar');
 };
+/* ===== Rekap 4D / 3D otomatis dari 2D Depan / Tengah / Belakang ===== */
+const R4K='wb_rek4d_v2',R4P=['Depan','Tengah','Belakang'],R4G={AC:'Depan',CK:'Tengah',KE:'Belakang'};
+let R2={};
+$('r4Pos').innerHTML=R4P.map(k=>`<div class="r4box"><div class="ph"><span>2D ${k} · <span id="r4n${k}">0</span> LN</span></div><div class="r4row"><b>Patah</b><input id="r4p${k}" data-r4p="${k}" placeholder="mis. 6 atau 1-13 (kosong = Angka Jadi)"></div><div class="hint" id="r4a${k}">Belum ada rekap 2D untuk ${k}.</div><textarea id="r4${k}" rows="2" data-r4="${k}" placeholder="LN 2D ${k} (terisi otomatis, bisa diedit)"></textarea><div class="hint" style="padding-top:6px;color:#ff8d84"><b>OFF 2D ${k}</b> — digit yang mati total di posisi ${k} · <span id="r4no${k}">0</span> digit</div><textarea id="r4o${k}" rows="1" data-r4x="1" placeholder="OFF digit ${k}, mis. 12345678"></textarea><div class="hint" id="r4ok${k}" style="padding-top:6px"></div></div>`).join('');
+function r4parse(t){
+  const ps=new Set();
+  String(t).replace(/\s*[-–]\s*/g,'-').split(/[,\s]+/).filter(Boolean).forEach(x=>{
+    const m=/^(\d+)(?:-(\d+))?$/.exec(x);if(!m)return;
+    let a=+m[1],b=m[2]===undefined?a:+m[2];if(a>b)[a,b]=[b,a];
+    for(let i=a;i<=Math.min(b,100);i++)ps.add(i);
+  });
+  return ps;
+}
+function r4off(pos){return new Set([...$('r4o'+pos).value.replace(/\D/g,'')]);}
+function r4set(pos){return new Set(toks($('r4'+pos).value,2));}
+function r4save(){try{const o={R2,p:{},ln:{}};R4P.forEach(k=>{o.p[k]=$('r4p'+k).value;o.ln[k]=$('r4'+k).value;});o.ai=$('r4ai').value;o.o2={};R4P.forEach(k=>{o.o2[k]=$('r4o'+k).value;});o.off=$('r4off').value;localStorage.setItem(R4K,JSON.stringify(o));}catch(_){}}
+function r4fill(pos){
+  const d=R2[pos],box=$('r4a'+pos);
+  if(!d){box.textContent='Belum ada rekap 2D untuk '+pos+'.';return;}
+  const keys=Object.keys(d.by).map(Number).sort((x,y)=>x-y),txt=$('r4p'+pos).value.trim();
+  let use;
+  if(!txt)use=keys.length?[keys[0]]:[];
+  else{const ps=r4parse(txt);use=keys.filter(k=>ps.has(k));}
+  const arr=[...new Set(use.flatMap(k=>d.by[k]))].sort();
+  $('r4'+pos).value=arr.join('*');
+  const ur=use.length?(use.length===1?'Patah '+use[0]:'Patah '+use[0]+'–'+use[use.length-1]+' ('+use.length+' tingkat)'):'tidak ada Patah yang cocok';
+  box.textContent=`Dari rekap ${d.lab}: ${txt?ur:'Angka Jadi · '+ur} → ${arr.length} LN · tersedia Patah ${keys.length?keys[0]+'–'+keys[keys.length-1]:'-'}`;
+}
+function r4render(){
+  const D=r4set('Depan'),T=r4set('Tengah'),B=r4set('Belakang'),sep=$('sep').value,o4=[],o3=[];
+  R4P.forEach(k=>$('r4n'+k).textContent=r4set(k).size);
+  const AI=$('r4ai').value.split('\n').map(x=>new Set(x.replace(/\D/g,''))).filter(z=>z.size),OFF=new Set(toks($('r4off').value,4));
+  $('r4nAI').textContent=AI.length;$('r4nOF').textContent=OFF.size;
+  const XD=r4off('Depan'),XT=r4off('Tengah'),XB=r4off('Belakang');
+  R4P.forEach(k=>{const X=r4off(k),L=r4set(k),el=$('r4ok'+k);$('r4no'+k).textContent=X.size;
+    if(!X.size){el.textContent='';return;}
+    const ok=[];for(let v=0;v<100;v++){const t=pad(v,2);if(X.has(t[0])||X.has(t[1]))continue;if(L.size&&!L.has(t))continue;ok.push(t);}
+    el.textContent='Sisa angka on: '+(ok.join('*')||'kosong')+' ('+ok.length+')';});
+  if(D.size||T.size||B.size||AI.length||XD.size||XT.size||XB.size)for(let v=0;v<10000;v++){
+    const s=pad(v,4);
+    if(OFF.has(s))continue;
+    if(XD.has(s[0])||XD.has(s[1])||XT.has(s[1])||XT.has(s[2])||XB.has(s[2])||XB.has(s[3]))continue;
+    if(D.size&&!D.has(s.slice(0,2)))continue;
+    if(T.size&&!T.has(s.slice(1,3)))continue;
+    if(B.size&&!B.has(s.slice(2,4)))continue;
+    if(AI.length&&!AI.every(z=>[...s].some(d=>z.has(d))))continue;
+    o4.push(s);
+  }
+  if(T.size||B.size||XT.size||XB.size)for(let v=0;v<1000;v++){
+    const s=pad(v,3);
+    if(XT.has(s[0])||XT.has(s[1])||XB.has(s[1])||XB.has(s[2]))continue;
+    if(T.size&&!T.has(s.slice(0,2)))continue;
+    if(B.size&&!B.has(s.slice(1,3)))continue;
+    o3.push(s);
+  }
+  $('r4out').value=o4.join(sep);$('r4nO').textContent=o4.length;
+  $('r4out3').value=o3.join(sep);$('r4n3').textContent=o3.length;
+  const used=[D.size?'Depan':'',T.size?'Tengah':'',B.size?'Belakang':'',AI.length?'AI/CT/CB':'',XD.size?'OFF Depan':'',XT.size?'OFF Tengah':'',XB.size?'OFF Belakang':''].filter(Boolean);
+  $('r4Info').textContent=used.length?`Dipakai: ${used.join(' + ')} → 4D ${o4.length} angka${OFF.size?' (OFF '+OFF.size+' dibuang)':''} · 3D ${o3.length} angka (3D memakai Tengah + Belakang)`:'Belum ada isi — jalankan Rekap 2D di Kelompok AC / CK / KE.';
+  addGrip($('r4out'));addGrip($('r4out3'));r4save();
+}
+function r4feed(by){
+  const g=$('bkGrp').value,pos=$('r4Tgt').value||R4G[g]||'Belakang';
+  const copy={};Object.keys(by).forEach(k=>copy[k]=by[k].slice());
+  R2[pos]={by:copy,lab:{Depan:'AC (depan)',Tengah:'CK (tengah)',Belakang:'KE (belakang)'}[pos]};
+  r4fill(pos);r4render();
+}
+$('r4Card').addEventListener('input',e=>{
+  const t=e.target;if(!t.dataset)return;
+  if(t.dataset.r4p){r4fill(t.dataset.r4p);r4render();}
+  else if(t.dataset.r4||t.dataset.r4x)r4render();
+});
+$('r4Copy').onclick=()=>{const t=$('r4out').value;if(!t){flash($('r4Copy'),'Belum ada hasil','Salin 4D');return;}copyText(t,$('r4Copy'),'Salin 4D',$('r4out'));};
+$('r4Copy3').onclick=()=>{const t=$('r4out3').value;if(!t){flash($('r4Copy3'),'Belum ada hasil','Salin 3D');return;}copyText(t,$('r4Copy3'),'Salin 3D',$('r4out3'));};
+function r4use(n,btn,orig,outId){
+  const t=$(outId).value;if(!t){flash(btn,'Belum ada hasil',orig);return;}
+  const arr=toks(t,n),tb=$('tabs').querySelector('button[data-n="'+n+'"]');
+  if(tb)tb.click();
+  $('dasar').value=arr.join('*');flash(btn,'Dipakai ✓',orig);
+}
+$('r4Use').onclick=()=>r4use(4,$('r4Use'),'Pakai di tab 4D','r4out');
+$('r4Use3').onclick=()=>r4use(3,$('r4Use3'),'Pakai di tab 3D','r4out3');
+$('r4Reset').onclick=()=>{R2={};R4P.forEach(k=>{$('r4o'+k).value='';});$('r4ai').value='';$('r4off').value='';R4P.forEach(k=>{$('r4p'+k).value='';$('r4'+k).value='';r4fill(k);});r4render();};
+$('sep').addEventListener('change',r4render);
+try{
+  const o=JSON.parse(localStorage.getItem(R4K)||'{}');
+  if(o.R2)R2=o.R2;
+  R4P.forEach(k=>{if(o.p&&o.p[k])$('r4p'+k).value=o.p[k];if(o.ln&&o.ln[k])$('r4'+k).value=o.ln[k];if(R2[k])r4fill(k);});
+  R4P.forEach(k=>{if(o.ln&&o.ln[k])$('r4'+k).value=o.ln[k];});
+  if(o.o2)R4P.forEach(k=>{if(o.o2[k])$('r4o'+k).value=o.o2[k];});
+  if(o.ai)$('r4ai').value=o.ai;if(o.off)$('r4off').value=o.off;
+}catch(_){}
+r4render();
 build();
 /* ===== kode, bank otomatis, kirim ke blog ===== */
 const BK=[['Harian','wb_harian_rekap_v1'],['Shio','wb_shio_rekap_v1']];
